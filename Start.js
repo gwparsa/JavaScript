@@ -24,7 +24,7 @@
 
 // Comment:
   // mitavan yek comment baraye tozihat ba // dar aval khat sakht.
-  
+
 
 // Variables:
   // variables are like containers that hold somthing temporarily.
@@ -34,19 +34,17 @@
   // yummy baraye cheese be soorat movaghat taarif shode.
   // dar mesal dovom addad 25 dar quotes("") gharar nagerefte chon yek adad ast va adad ha dar JS taarif shde hastand ama kalamat kheyr!
 
-    // dar variables ha nmitavanim az name haye zir estefade konim:
-      var 1test ="test"; // ba adad shoru nmishavand.
-      var $test ="test"; // ba alamat haye %^&$ etc shoru nmishavand.
-      var test-test ="test"; // nmitavan beyn name az - estefade kard.
-      var test test ="test"; // nmitavan az space bein name estefade kard.
-      var new ="test"; // nmitavan az keyword haye js baraye name estefade kard.
+  // dar variables ha nmitavanim az name haye zir estefade konim:
+    var 1test ="test"; // ba adad shoru nmishavand.
+    var $test ="test"; // ba alamat haye %^&$ etc shoru nmishavand.
+    var test-test ="test"; // nmitavan beyn name az - estefade kard.
+    var test test ="test"; // nmitavan az space bein name estefade kard.
+    var new ="test"; // nmitavan az keyword haye js baraye name estefade kard.
   
-        // bozorgi va choochaki dar name var mohem ast va ba ham motefavet hastand:
-          var name ="";
-          var Name ="";
-          var nAme ="";
-          var Myname ="";
-          var MyName ="";
-          var myName ="";  // ...
-
-
+  // bozorgi va choochaki dar name var mohem ast va ba ham motefavet hastand:
+    var name ="";
+    var Name ="";
+    var nAme ="";
+    var Myname ="";
+    var MyName ="";
+    var myName ="";  // ...
