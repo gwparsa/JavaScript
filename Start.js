@@ -48,3 +48,8 @@
     var Myname ="";
     var MyName ="";
     var myName ="";  // ...
+  // nokat :
+    // mitavan do moteghaier ra ba ham jam kard va an ra be moteghaier jadidi ezafe kard :
+      var mynum = 6 ;
+      var myNum = 5 ; 
+      var plus = mynum * myNum ; //  = 30
