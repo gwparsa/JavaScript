@@ -49,7 +49,29 @@
     var MyName ="";
     var myName ="";  // ...
   // nokat :
-    // mitavan do moteghaier ra ba ham jam kard va an ra be moteghaier jadidi ezafe kard :
-      var mynum = 6 ;
-      var myNum = 5 ; 
-      var plus = mynum * myNum ; //  = 30
+  // mitavan do moteghaier ra ba ham jam kard va an ra be moteghaier jadidi ezafe kard :
+    var mynum = 6 ;
+    var myNum = 5 ; 
+    var plus = mynum * myNum ; //  = 30
+  //vaghti adadi ra dar "" minevisim dar vaghe an adad string ast na number:
+    var notNum = "5";
+    var newNum = 10;
+      newNum + notNum; // = "105"
+  // variable ha anvae mokhtalefi darand manand Number, String, undefined, Object etc
+  // mitavan ba method typeof noe var ra peyda konim:
+    var mynum = 3;
+    var mystring = "hello";
+    var myundefined;
+    var myobject = null;
+    var myboolean = true;
+    typeof(mynum); // number
+    typeof(mystring); // string
+    typeof(myundefined); // undefined
+    typeof(myobject); // Object
+    typeof(myboolean); // boolean (true or false)
+  // mohem nist baraye string ha az "" ya '' estefade konim (hardo yeksan hastand)
+
+
+// Arrays :
+  
+
