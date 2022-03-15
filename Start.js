@@ -73,5 +73,12 @@
 
 
 // Arrays :
-  
-
+  //array ha manand var ha hastand ama mitavan dar array meghdar bishtari data negahdari kard. manand yek container ke dar an data mirizim.
+  // mitavan be 2 ravesh array hara sakht :
+    var colors = new Array("red", "green", "blue");
+    var colors = ["red", "green", "blue"];
+  // array ha az adad 0 shoru mishavad pas dar bala "red" element 0 ma ast.
+    colors.length; //ama agar ba in code bekhahim tedad element ha ra daryaft konim in adad fargh va 3 hast.
+  // ma mitavanim hame noe data ra dar array gharar dahim.
+  // hamchenin mitavanim dar array ha array koochek tari ham dashte bashim:
+    var vehicles = [ "ford", ["fiesta", "mitso"], "lambo" ]
