@@ -24,7 +24,14 @@
 
 // Comment:
   // mitavan yek comment baraye tozihat ba // dar aval khat sakht.
+  /* hamchenin agar comment shoma toolani ast
+   ya agar mikhahid in comment ra dar chand khat benevisid
+   mitavanid az / va * estefade konid */
 
+//Notes:
+  // ba estefade az method time mitavan zaman be anjam residan an dastoor ra did : 
+    console.time("hello my friend!")
+    
 
 // Variables:
   // variables are like containers that hold somthing temporarily.
@@ -40,7 +47,6 @@
     var test-test ="test"; // nmitavan beyn name az - estefade kard.
     var test test ="test"; // nmitavan az space bein name estefade kard.
     var new ="test"; // nmitavan az keyword haye js baraye name estefade kard.
-  
   // bozorgi va choochaki dar name var mohem ast va ba ham motefavet hastand:
     var name ="";
     var Name ="";
@@ -82,3 +88,10 @@
   // ma mitavanim hame noe data ra dar array gharar dahim.
   // hamchenin mitavanim dar array ha array koochek tari ham dashte bashim:
     var vehicles = [ "ford", ["fiesta", "mitso"], "lambo" ]
+  // mitavan ba method push yek element ra be array ezafe kard :
+    vehicles.push("pride");
+  // hamchenin mitavan ba estefade az method splice yek element ra  az array remove kard :
+    vehicles.splice(1,1); // element shomare 1 delete khahad shod.
+  // mitavan ba method sort yek array ra be soorat horoof alefba chid:
+    vehicles.sort();
+  
