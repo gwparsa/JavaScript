@@ -94,6 +94,8 @@
     vehicles.splice(1,1); // element shomare 1 delete khahad shod.
   // mitavan ba method sort yek array ra be soorat horoof alefba chid:
     vehicles.sort();
+  // agar bekhahim akharin onsor array ra peyda konim az method at estefade mikonim:
+    var last = colors.at(-1);
   
 
 // Oprators, Booleans and Selections :

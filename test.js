@@ -30,3 +30,4 @@ if(goodmood || gotsleep || breakfast) {
   console.log("emrooz halam khosh nist ;(")
 }
 /**************/
+console.time("salam o doroood o do sad bedrood");
