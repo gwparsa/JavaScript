@@ -119,7 +119,7 @@
   //Dar ES5 (2009) oprator === be JS add shod, ke baraks mored bala amal mikonad va noe value ham baraye in oprator mohem ast:
     var myNum = 5;
     var notNum = "5";
-    if (myNum == notNum) {} // false...
+    if (myNum === notNum) {} // false...
   
 
 //Else If:zamani ke ma yek statement sharti darim az if va else estefade mikonim ama agar bekhahim shart ma option haye bishtari dashte bashad mitavan da bein if va else yek Else If gharar dad: 
