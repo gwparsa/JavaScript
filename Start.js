@@ -1,12 +1,23 @@
-// Writed by GwParSa - https://GitHub.com/GwParSa - Lang: Persian
+// Writed by GwParSa - https://GitHub.com/GwParSa - Lang: Persian - Finglish
 
 // Introduction:
   // JS is most popular programming language. it is the language of the web and now well beyond the web. also, we can use JS in robots, gaming etc as well. but JS is a native web programming language.
 
 
+
+
+
+
+
 // Story of JS:
   // dar sal 1995 avalin version js dar 10 rooz be vasile Brandon Eich tarahi shod. in zaban ebteda Mocha nam dasht va sepas be JavaScript taghir peyda kard.
   // hamchenin dar saal haye aval js shakhsi be nam Douglas Crockford be pishraft in zaban komak kard va dar mored an ketabi ba nam JavaScript:The Good Parts nevesht.
+
+
+
+
+
+
 
 
 // JavaScript Versions:
@@ -22,16 +33,36 @@
   // ECMAscript9 -> in 2018
 
 
+
+
+
+
+
+
 // Comment:
   // mitavan yek comment baraye tozihat ba // dar aval khat sakht.
-  /* hamchenin agar comment shoma toolani ast
-   ya agar mikhahid in comment ra dar chand khat benevisid
-   mitavanid az / va * estefade konid */
+  /* hamchenin mitavanid az / va * estefade konid */
+
+
+
+
+
+
+
 
 //Notes:
   // ba estefade az method time mitavan zaman be anjam residan an dastoor ra did : 
     console.time("hello my friend!")
     
+
+
+
+
+
+
+
+
+
 
 // Variables:
   // variables are like containers that hold somthing temporarily.
@@ -41,20 +72,36 @@
   // yummy baraye cheese be soorat movaghat taarif shode.
   // dar mesal dovom addad 25 dar quotes("") gharar nagerefte chon yek adad ast va adad ha dar JS taarif shde hastand ama kalamat kheyr!
 
+  //ravesh haye esmgozari: 1.camel case 2.snake case 3.kebab case 4.pascal case
+  //camel case: 
+  // esm haii ke 2 bakhshi hastan, aval harf bakhsh dovom ra be soorat Uppercase minevisim:
+    let lastName;
+    let firstName;
+  //snake case:
+  // har vaght esm ma 2 bakhsh dasht bein an ha underscore ( _ ) gharar midahim:
+    let last_name;
+  //pascal case:
+  // mesl camel case ama harf haye aval har 2 bakhsh UpperCase neveshte mishavand:
+    let LastName;
+    let FirstName;
+  // behtar ast bishtar az camel case estefade shavad.
+
+  //Rules:
   // dar variables ha nmitavanim az name haye zir estefade konim:
     var 1test ="test"; // ba adad shoru nmishavand.
-    var $test ="test"; // ba alamat haye %^&$ etc shoru nmishavand.
-    var test-test ="test"; // nmitavan beyn name az - estefade kard.
+    var test-test ="test"; // nmitavan beyn name az hyphen ( - ) estefade kard.
     var test test ="test"; // nmitavan az space bein name estefade kard.
     var new ="test"; // nmitavan az keyword haye js baraye name estefade kard.
-  // bozorgi va choochaki dar name var mohem ast va ba ham motefavet hastand:
+  // mitavanid az $ ya _ baraye esm variable khod estefade konid.( saii konid aval esm ha gharar dahid )
+    let $name;
+    let _name;
+  // js yek zaban case sensetive ast. yani be bozorgi ya kochiki horoof hasas ast:
     var name ="";
     var Name ="";
     var nAme ="";
     var Myname ="";
     var MyName ="";
     var myName ="";  // ...
-  // nokat :
   // mitavan do moteghaier ra ba ham jam kard va an ra be moteghaier jadidi ezafe kard :
     var mynum = 6 ;
     var myNum = 5 ; 
@@ -63,19 +110,76 @@
     var notNum = "5";
     var newNum = 10;
       newNum + notNum; // = "105"
+
+  //Update: Dar ES5 ma az var estefade mikardim ama baad az ES6 behtare az let va const estefade beshe.
+    let name = 'parsa'; // let variableii ast ke mitavan dat tool porozhe meghdar an ra taghir dad.
+    const lastname = 'sorsori'; // const mokhafaf constant be maani sabet ast va meqdar an ra nmishavad taghir dad.
+  
+  // agar dar ebteda be in do variable meghdar nadahim che mishavad?
+    const surname; // error khahad khord! hatman bayad dar ebteda meqdar dehi shavad.
+    let age; // mitavan baadan be an meqdar dad va moshkeli nadarad.
+
+  // che zamani az let va key az const estefade konim?
+  // be soorat default hatman az const estefade konim. magar inke bekhaiim meqdar variable ra taghir dahim. chera? 1. rahat boodan dar khoondan code 2. amniat bishtari darad, kase digari nmitavanad data haye dakhel const ra taghir dahad 3. speed motor haye js baraye run krdn const bishtar ast.
+
+
+
+
+
+
+
+
+
+
+
+// Data Types:      
   // variable ha anvae mokhtalefi darand manand Number, String, undefined, Object etc
-  // mitavan ba method typeof noe var ra peyda konim:
-    var mynum = 3;
-    var mystring = "hello";
-    var myundefined;
-    var myobject = null;
-    var myboolean = true;
-    typeof(mynum); // number
-    typeof(mystring); // string
-    typeof(myundefined); // undefined
-    typeof(myobject); // Object
-    typeof(myboolean); // boolean (true or false)
-  // mohem nist baraye string ha az "" ya '' estefade konim (hardo yeksan hastand)
+    var mynum = 3; //Number, fargh nmikone adad Integer ( adad haye sahih ) ya Float ( adad haye ashari ) bashe.
+    let mynum2 = 1.45;
+    var mystring = "hello"; //String, mohem nist baraye string ha az "" ya '' estefade konim (hardo yeksan hastand). ama baraye inke be moshkel grammeri nakhorim behtare az "" estefade beshe.
+    let myundefined; // Undefined, meghdar dehi nashode.
+    const mynull = null; // Null, meghdar dehi shode ama null yani hich ya pooch.
+    var isFinished = true; //Boolean, saii konim variable haii ke meqdar boolean darand dar esm ba is ya are shoroo konim. ex: let isDone = true; ya const areGone = false; . hamchenin 0, null, undefined, NaN dar boolean ha be manaye false hastand.
+    const courses = ["JS Course", 15, true]; //Array, dar dakhel arrey baghie data type ha ham mitavanand gharar begirand va ba , az ham joda mishavand.
+    const jsCourse = {fullName: "JavaScript Course", courseHours: 35, episodes: 100}; //Object, data haye mokhtalef yek chiz ra dar object gharar midahim. masalan inja data haye js course mesl saat amoozesh ya modares course va ... ra gharar dadim.
+
+  // mitavan ba method typeof noe variables ha ra peyda konim:
+    typeof mynum; //Number
+    typeof mystring; //String
+    typeof myundefined; //Undefined
+    typeof isFinished; //Boolean (true or false)
+    typeof mynull; //Object
+    typeof jsCourse; //Object
+    typeof courses; //Object
+  // in method array va null ra ham object neshan midahad!
+  // in method yek noe Oprator ast.
+    
+
+
+
+
+
+
+
+
+
+    
+// Oprators:
+  //oprator ha shamel symbol hayi hastand ke harkodam amaliat mokhtalefi ra shekl midahand, mesl: = , == , >< , + , - , / etc.
+
+  //Arithmetic Operators (amalgar riazi): +  -  *  /  **  ++  --  %
+  //baraye be tavan resadan adad x ba adad y az ( ** ) estefade mikonim. ex: x ** y --> x be tavan y.
+  //baraye ezafe kardan yek vahed be yek variable mitavanim ++ be an variable ezafe konim. ex: x++; . baraye kam kardan yek vahed ham az -- estefade mikonim. ex: x--; .
+
+  //Assignment Oprators (amalgar haye entesabi): 
+  //
+  
+
+
+
+
+
+
 
 
 // Arrays :
@@ -96,12 +200,16 @@
     vehicles.sort();
   // agar bekhahim akharin onsor array ra peyda konim az method at estefade mikonim:
     var last = colors.at(-1);
-  
 
-// Oprators, Booleans and Selections :
-  //oprator ha shamel symbol hayi hastand ke harkodam amaliat mokhtalefi ra shekl midahand, mesl: = , == , >< , + , - , / va ... 
-  //Boolean ha be noei data gofte mishavad ke ya true ast ya false ! pas meghdar dataye boolean ha true , false ast. hamchenin 0, null, undefined, NaN dar boolean ha be manaye false hastand.
-  //dar selection ma mitavanim baraye boolean ha shart true ya false bogzarim etc..
+
+
+
+
+
+
+
+
+
 
 
 //Comparing Values: 
@@ -119,23 +227,42 @@
   //Dar ES5 (2009) oprator === be JS add shod, ke baraks mored bala amal mikonad va noe value ham baraye in oprator mohem ast:
     var myNum = 5;
     var notNum = "5";
-    if (myNum == notNum) {} // false...
+    if (myNum === notNum) {} // false...
   
+
+
+
+
+
+
+
+
+
 
 //Else If:zamani ke ma yek statement sharti darim az if va else estefade mikonim ama agar bekhahim shart ma option haye bishtari dashte bashad mitavan da bein if va else yek Else If gharar dad: 
-  var colors = ['blue', 'red', 'green', 'yellow'];
-  var selectedColor = colors[1]; // Dar inja yeki az rang haye colors ro entekhab va dar statement paiin mikhahim peydayash konim:
+    var colors = ['blue', 'red', 'green', 'yellow'];
+    var selectedColor = colors[1]; // Dar inja yeki az rang haye colors ro entekhab va dar statement paiin mikhahim peydayash konim:
 
-  if (selectedColor == colors[0]) {
-    console.log("rang entekhabi: " + colors[0]);
-  } else if(selectedColor == colors[1]) {
-    console.log("rang entekhabi: " + colors[1]);
-  } else if(selectedColor == colors[2]) {
-    console.log("rang entekhabi: " + colors[2]);
-  } else {
-    console.log("rang entekhabi: " + colors[3]);
-  }
+    if (selectedColor == colors[0]) {
+      console.log("rang entekhabi: " + colors[0]);
+    } else if(selectedColor == colors[1]) {
+      console.log("rang entekhabi: " + colors[1]);
+    } else if(selectedColor == colors[2]) {
+      console.log("rang entekhabi: " + colors[2]);
+    } else {
+      console.log("rang entekhabi: " + colors[3]);
+    }
   
+
+
+
+
+
+
+
+
+
+
 
 //Switch:
   //gahi oghat shart haye ma be ghadri ziad ast ke nmitavanim az if va else estefade konim pas mitavanim az switch statement estefade konim :
@@ -146,6 +273,16 @@
       case colors[3]: console.log("rang shoma: " + colors[3]); break;
     default: console.log("Rang shoma dar in list nist !"); // zamani ke shart ma dar statement vojud nadashte bashe be soorat default in khat code ejra mishe. 
   }
+
+
+
+
+
+
+
+
+
+
 
 
 // && and || oprators:
@@ -171,5 +308,22 @@
     }
 
 
+
+
+
+
+
+
+
+
+
+
 //Loops:
-  
+  // gahhi oghat ma mikhahim meghdari az code hara be tor modavem ejra konim ta be javab akhar beresad, gahi oghat niaz darim ta enghadr yek statement tekrar shavad ta be javab beresad.
+  // marsoom tarin halat loops dar js be vasile for anjam mishavad
+    for(var i = 0; i < 10; i++){
+        //code haye in ghesmat darsoorati ke shart bala yani ta zamani ke i koochek tar az 10 bashad, in code ejra mishavad.
+      console.log(i);
+    }
+
+  //
