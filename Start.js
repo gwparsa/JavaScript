@@ -319,6 +319,7 @@
 
 
 //Loops:
+<<<<<<< HEAD
   // gahhi oghat ma mikhahim meghdari az code hara be tor modavem ejra konim ta be javab akhar beresad, gahi oghat niaz darim ta enghadr yek statement tekrar shavad ta be javab beresad.
   // marsoom tarin halat loops dar js be vasile for anjam mishavad
     for(var i = 0; i < 10; i++){
@@ -327,3 +328,6 @@
     }
 
   //
+=======
+  
+>>>>>>> 528444155155b8fa7069efb75e8a3c5af50a7b4c
