@@ -171,8 +171,18 @@
   //baraye be tavan resadan adad x ba adad y az ( ** ) estefade mikonim. ex: x ** y --> x be tavan y.
   //baraye ezafe kardan yek vahed be yek variable mitavanim ++ be an variable ezafe konim. ex: x++; . baraye kam kardan yek vahed ham az -- estefade mikonim. ex: x--; .
 
-  //Assignment Oprators (amalgar haye entesabi): 
-  //
+  //Assignment Operators (amalgar entesabi): =  +=  -=  *= /=  %=  **=
+  //ba estefade az = meqdar haye mokhtalef ra be variable haye mokhtalef assign mikonim.
+  //hamantor ke dar amalgar haye riazi ++ ya -- dashtim mitavanim baraye ezafe krdn yek vahed be variable az += ya -= ya *= ya /= ya %= ham estefade kard(ravesh behtari ast).
+
+  //Comparison Operators (amalgar moqayeseii): ==  !=  ===  !==  >  <  >=  <=
+  //Be soorat boolean(true ya false) Khorooji midahad.
+  //Az == baraye moqayese meqdar haye 2 variable estefade mishavad. ex: (x=5 == y=6) --> false. va baraks mitavanim az != baraye moqayese inke meqdar 2 variable barabar nabashand estefade konim. ex: (x=5 != y=6) --> true.
+  //Az === baraye Moqayese type meqdar 2 variable estefade mikonim. ex: (x=5 === y=6) --> true. baraye moqayese barabar naboodan ham az !== estefade mikonim. ex: (x=5 !== y="6") --> true.
+  //saii konim bishtar az === va !== estefade konim. 
+
+  //Logical Operators (amalgar manteghi): 
+
   
 
 
@@ -266,14 +276,13 @@
 
 //Switch:
   //gahi oghat shart haye ma be ghadri ziad ast ke nmitavanim az if va else estefade konim pas mitavanim az switch statement estefade konim :
-  switch(selectedColor){
+    switch(selectedColor){
       case colors[0]: console.log("rang shoma: " + colors[0]); break; //baraye inke vaghti statement ma yek javab true gereft az kol statement kharej beshe va dobare amal tekrar nashe az break; estefade mikonim.
       case colors[1]: console.log("rang shoma: " + colors[1]); break;
       case colors[2]: console.log("rang shoma: " + colors[2]); break;
       case colors[3]: console.log("rang shoma: " + colors[3]); break;
     default: console.log("Rang shoma dar in list nist !"); // zamani ke shart ma dar statement vojud nadashte bashe be soorat default in khat code ejra mishe. 
-  }
-
+    }
 
 
 
@@ -319,15 +328,9 @@
 
 
 //Loops:
-<<<<<<< HEAD
   // gahhi oghat ma mikhahim meghdari az code hara be tor modavem ejra konim ta be javab akhar beresad, gahi oghat niaz darim ta enghadr yek statement tekrar shavad ta be javab beresad.
   // marsoom tarin halat loops dar js be vasile for anjam mishavad
     for(var i = 0; i < 10; i++){
         //code haye in ghesmat darsoorati ke shart bala yani ta zamani ke i koochek tar az 10 bashad, in code ejra mishavad.
       console.log(i);
     }
-
-  //
-=======
-  
->>>>>>> 528444155155b8fa7069efb75e8a3c5af50a7b4c
