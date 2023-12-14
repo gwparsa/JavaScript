@@ -19,7 +19,6 @@
 
 
 
-
 // JavaScript Versions:
   // ECMA : Europen Computer Manfacture Association ya haman anjoman tolid computer europa ast ke version haye standard ziadi baraye JS montasher kard:
   // ECMAscript1 -> in 1997
@@ -52,9 +51,22 @@
 
 //Notes:
   // ba estefade az method time mitavan zaman be anjam residan an dastoor ra did : 
-    console.time("hello my friend!")
+    console.time("hello my friend!");
     
 
+
+
+
+
+
+
+
+
+//Shortcuts:
+// ctrl + enter --> raftan be khat baad dar vasat line ha bedoon beham rikhtan line ghabli.
+// alt + arrow down or up --> ja be ja kardan yek line dar bein baghie line ha.
+// ctrl + / --> comment kardan kol text haii ke select kardim.
+// alt + click --> ghabeliat neveshtan dar chand line hamzaman.
 
 
 
@@ -88,10 +100,10 @@
 
   //Rules:
   // dar variables ha nmitavanim az name haye zir estefade konim:
-    var 1test ="test"; // ba adad shoru nmishavand.
-    var test-test ="test"; // nmitavan beyn name az hyphen ( - ) estefade kard.
-    var test test ="test"; // nmitavan az space bein name estefade kard.
-    var new ="test"; // nmitavan az keyword haye js baraye name estefade kard.
+    //var 1test ="test"; // ba adad shoru nmishavand.
+    //var test-test ="test"; // nmitavan beyn name az hyphen ( - ) estefade kard.
+    //var test test ="test"; // nmitavan az space bein name estefade kard.
+    //var new ="test"; // nmitavan az keyword haye js baraye name estefade kard.
   // mitavanid az $ ya _ baraye esm variable khod estefade konid.( saii konid aval esm ha gharar dahid )
     let $name;
     let _name;
@@ -116,7 +128,7 @@
     const lastname = 'sorsori'; // const mokhafaf constant be maani sabet ast va meqdar an ra nmishavad taghir dad.
   
   // agar dar ebteda be in do variable meghdar nadahim che mishavad?
-    const surname; // error khahad khord! hatman bayad dar ebteda meqdar dehi shavad.
+    //const surname; // error khahad khord! hatman bayad dar ebteda meqdar dehi shavad.
     let age; // mitavan baadan be an meqdar dad va moshkeli nadarad.
 
   // che zamani az let va key az const estefade konim?
@@ -171,17 +183,69 @@
   //baraye be tavan resadan adad x ba adad y az ( ** ) estefade mikonim. ex: x ** y --> x be tavan y.
   //baraye ezafe kardan yek vahed be yek variable mitavanim ++ be an variable ezafe konim. ex: x++; . baraye kam kardan yek vahed ham az -- estefade mikonim. ex: x--; .
 
+
   //Assignment Operators (amalgar entesabi): =  +=  -=  *= /=  %=  **=
   //ba estefade az = meqdar haye mokhtalef ra be variable haye mokhtalef assign mikonim.
   //hamantor ke dar amalgar haye riazi ++ ya -- dashtim mitavanim baraye ezafe krdn yek vahed be variable az += ya -= ya *= ya /= ya %= ham estefade kard(ravesh behtari ast).
 
+
   //Comparison Operators (amalgar moqayeseii): ==  !=  ===  !==  >  <  >=  <=
   //Be soorat boolean(true ya false) Khorooji midahad.
   //Az == baraye moqayese meqdar haye 2 variable estefade mishavad. ex: (x=5 == y=6) --> false. va baraks mitavanim az != baraye moqayese inke meqdar 2 variable barabar nabashand estefade konim. ex: (x=5 != y=6) --> true.
-  //Az === baraye Moqayese type meqdar 2 variable estefade mikonim. ex: (x=5 === y=6) --> true. baraye moqayese barabar naboodan ham az !== estefade mikonim. ex: (x=5 !== y="6") --> true.
+  //Az === baraye Moqayese type meqdar 2 variable estefade mikonim. ex: (x=5 === y=6) --> true. baraye moqayese barabar naboodan ham az !== estefade mikonim. ex: (x=5 !== y="6") --> true. in amalgar dar ES5 ( 2009 ) ezafe shod.
   //saii konim bishtar az === va !== estefade konim. 
 
-  //Logical Operators (amalgar manteghi): 
+  
+  //Logical Operators (amalgar manteghi): ||(or)  &&(and)  !(not)
+  //Be soorat boolean(true ya false) Khorooji midahad.
+  //Dar && har 2 statement bayad true bashand ta khorooji true bashad. ex: console.log(true && true) --> true.
+  //Dar || agar yeki az 2 statement ha true bashad khorooji true khahad bood va niazi nist ke hame statement ha true bashand. ex: console.log(true || false) --> true.
+  //Agar dar ebtedaye har statement ! bogzarim, khorooji an statement ra manfi ya baraks mikonad. ex: console.log(!true) --> false.
+
+
+  //String Operator (amalgar reshteii): +
+  //Az + baraye chasbandan string ha estefade mikonim. ex: console.log("Parsa" + " " + "Sorsori") --> Parsa Sorsori.
+
+
+  //Unary Operators (amalgar haye yekani): +(unary plus)  -(unary negation)
+  //Agar yek number dashte bashim ke type string bashad mitavanim ba ezafe kardan + be aval an variable, an ra tabdil be type number konim. ex: value= "5"; console.log(+value) --> 5.
+  //Agar - ra be aval har variableii ba type number ezafe konim, an ra manfi mikonad. ex: console.log(-value) --> -5.
+
+
+  //Nullish Coalescing Operator: ??
+  //Agar 2 variable dashte bashim ke yeki az an ha type null ya undefined bashad, ba gozashtan yek ?? bein an ha, variableii ke undefined ya null nabashad be onvan khorooji khahad bood. ex:
+    let unName;
+    const goodNumber = 45;
+    console.log(unName ?? goodNumber) // --> unName undefined ast pas khorooji 45 ast.
+  //Agar har 2 variable null ya undefined nabashand, avalin variable ra khorooji migirad. ama agar har do null ya undefined bashand, haman variable dovom ke null ya undefined ast ra khorooji migirad chon az chap be rast check mikonad va akharin variable ra khorooji migirad.
+
+
+  //Ternary Operator (amalgar 3gane): ?:
+  //Agar yek shart dashte bashim ke true ya false bashad va bekhaiim begooim agar true bood felan kar va agar false bood folan kar ra anjam bede, az in operator estefade mikonim. ex: shart ? agar true bood : agar false bood. ex:
+    x > y ? console.log(x) : console.log(y);
+  //Dar bala agar shart ma yani x bozorg tar az y bashad( true bashad ), code avali yani console.log(x) ra khorooji migirad ama agar x az y bozorg tar nabashad( false bashad ), code dovom yani console.log(y) ra khorooji migirad.
+
+
+
+
+
+
+
+
+
+
+
+
+//Truthy and Falsy Values:
+  //Dar JS number ha va string ha ham mitavanand be soorat boolean (true ya false) bashand. masalan adad 0 hamishe false ast ama digar adad ha (mesl 1 34234 -45 va...) true khahand bood ke be estelah migooiim 0 falsy va baghie adad ha truthy hastand.
+  //String ha ham boolean khahand bood, string khali ya "" falsy va baghie string ha ke value darand truthy hastand.
+  //Null va undefined ham falsy hastand. khod false ham falsy va true ham truthy hastand.
+  //Array ha che khali che por truthy khahand bood. object ham hamingoone ast.
+
+
+
+
+
 
   
 
@@ -210,35 +274,6 @@
     vehicles.sort();
   // agar bekhahim akharin onsor array ra peyda konim az method at estefade mikonim:
     var last = colors.at(-1);
-
-
-
-
-
-
-
-
-
-
-
-
-//Comparing Values: 
-  //Dar JS == be manaye "mesle.." ast yani dar shorut agar bein do variable in oprator ra bogzarim be manaye yeksan boodan anha ast:
-    if (myNum == otherNum) {}
-  //hamchenin != be manaye gheir yeksan boodan an do variable ast :
-    if (myNum != otherNum) {}
-  //hamchenin < ya > be manaye bozorg tar ya koochik tar boodan value yek variable ast (bishtar dar number ha estefade mishavad):
-    if (myNum > otherNum) {}
-    if (myNum < otherNum) {}
-  // **Type Coercion: vaghti do variable ba value haye gheir ham noe masalan string va number dar shorut ba == test mishavand, test an true ast zira dar in statement noe value mohem nmibashad balke khode value mohem ast:
-    var myNum = 5;
-    var notNum = "5";
-    if (myNum == notNum) {} // true...
-  //Dar ES5 (2009) oprator === be JS add shod, ke baraks mored bala amal mikonad va noe value ham baraye in oprator mohem ast:
-    var myNum = 5;
-    var notNum = "5";
-    if (myNum === notNum) {} // false...
-  
 
 
 
