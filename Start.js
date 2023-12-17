@@ -150,7 +150,7 @@
     let mynum2 = 1.45;
     var mystring = "hello"; //String, mohem nist baraye string ha az "" ya '' estefade konim (hardo yeksan hastand). ama baraye inke be moshkel grammeri nakhorim behtare az "" estefade beshe.
     let myundefined; // Undefined, meghdar dehi nashode.
-    const mynull = null; // Null, meghdar dehi shode ama null yani hich ya pooch.
+    const mynull = null; // Null, meghdar dehi shode ama null yani hich ya pooch. baraye reset krdan meqdar yek variable estefade mishavad. masalan vaghti bekhaiim meqdar ghabli yek variable ra pak konim an ra null gharar midahim.
     var isFinished = true; //Boolean, saii konim variable haii ke meqdar boolean darand dar esm ba is ya are shoroo konim. ex: let isDone = true; ya const areGone = false; . hamchenin 0, null, undefined, NaN dar boolean ha be manaye false hastand.
     const courses = ["JS Course", 15, true]; //Array, dar dakhel arrey baghie data type ha ham mitavanand gharar begirand va ba , az ham joda mishavand.
     const jsCourse = {fullName: "JavaScript Course", courseHours: 35, episodes: 100}; //Object, data haye mokhtalef yek chiz ra dar object gharar midahim. masalan inja data haye js course mesl saat amoozesh ya modares course va ... ra gharar dadim.
@@ -182,6 +182,7 @@
   //Arithmetic Operators (amalgar riazi): +  -  *  /  **  ++  --  %
   //baraye be tavan resadan adad x ba adad y az ( ** ) estefade mikonim. ex: x ** y --> x be tavan y.
   //baraye ezafe kardan yek vahed be yek variable mitavanim ++ be an variable ezafe konim. ex: x++; . baraye kam kardan yek vahed ham az -- estefade mikonim. ex: x--; .
+  //agar dar jaii chand amalgar hesabi kenar ham dashte bashim, js midanad ke kodam amalgar ra aval hesab konad. mesl amaliat riazi ke aval zarb anjam mishavad va baad jam o tafrigh.
 
 
   //Assignment Operators (amalgar entesabi): =  +=  -=  *= /=  %=  **=
@@ -249,9 +250,26 @@
 
   
 
+//NaN (Not a Number):
+  //zamani ke bekhahim rooye yek data type gheir az Number mohasebat anjam bedim, in khata rokh midahad.
+    console.log("Parsa" / 2); // --> NaN
+  //NaN yek zir majmooe az data type Number ast!
 
 
 
+
+
+
+
+//String, Numbers (Methods etc):
+  //agar bekhaiim yek number ra be string tabdil konim. ( .toString() ) 
+    const anString = number.toString();
+  
+  //adad haye ashari ra fix mikonad va ragham haye ashar an ra pak mikonad. mitavan dar () haye in function yek adad nevesht ke chand ragham ashar ra neshan dahad. ( .toFixed() )
+    const anotherString = number.toFixed(); // 3.23124 --> 3
+    const AnotherString = number.toFixed(2); // 3.23124 --> 3.23
+
+  //
 
 
 
