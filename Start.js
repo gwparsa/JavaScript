@@ -343,6 +343,8 @@
     console.log(text2.substring(0, 5)); //--> "Parsa"
     console.log(text2.substr(0, 5)); //--> "Parsa" // substr ghadimi shode va digar estefade nmishavad.
 
+  //Template Literals: baraye estefade az variable ha dar ye string mitavanim be soorat zir amal konim. bejaye "" az `` (backtick) baraye neveshtan string estefade konim va agar mikhaim variablei ra dakhel in string gharar dahim bayad az ${variable} estefade konim. ex:
+    const textWithVars = `Hi. My name is ${text2}.`; //--> "Hi. My name is Parsa Sorsori."
 
 
 
