@@ -202,6 +202,23 @@
   //Dar && har 2 statement bayad true bashand ta khorooji true bashad. ex: console.log(true && true) --> true.
   //Dar || agar yeki az 2 statement ha true bashad khorooji true khahad bood va niazi nist ke hame statement ha true bashand. ex: console.log(true || false) --> true.
   //Agar dar ebtedaye har statement ! bogzarim, khorooji an statement ra manfi ya baraks mikonad. ex: console.log(!true) --> false.
+  // vaghti bekhahim dar statement haye sharti bekhahim do variable ro check konim ke bebinim aya har do true hastand, bein anha && gharar midahim:
+  var goodmood = true;
+  var gotsleep = true;
+  if(goodmood && gotsleep) {
+    console.log("emrooz rooz khoobie ;)") //--> khorooji
+  } else {
+    console.log("emrooz halam khosh nist ;(")
+  }
+  //ama agar bekhahim bebinim ke aya hata yeki az anha true ast, bayad az || dar beineshan estefade konim:
+  var goodmood = true;
+  var gotsleep = true;
+  var breakfast = false;
+  if(goodmood || gotsleep || breakfast) { //faghad breakfast false ast ama do mored digar true hastand.
+    console.log("emrooz rooz khoobie ;)") //--> khorooji
+  } else {
+    console.log("emrooz halam khosh nist ;(")
+  }
 
 
   //String Operator (amalgar reshteii): +
@@ -261,20 +278,81 @@
 
 
 
-//String, Numbers (Methods etc):
+//Methods:
   //agar bekhaiim yek number ra be string tabdil konim. ( .toString() ) 
     const anString = number.toString();
+  //va baraks baraye tabdil yek string be number az method zir estefade mikonim:
+    const anNumber = Number(string); 
+  // method parseInt ham mitavanad string ra be number tabdil konad (agar dar string ma space bein adad ha bood az in method estefade mionim ke bakhsh baad space ra hazf mikonad). 
+    const AnNumber = parseInt(string);
+  // in method baraye tabdil string haii ast ke adad ashari dar an vojood darad. 
+    const anNumber2 = parseFloat(string) 
   
   //adad haye ashari ra fix mikonad va ragham haye ashar an ra pak mikonad. mitavan dar () haye in function yek adad nevesht ke chand ragham ashar ra neshan dahad. ( .toFixed() )
     const anotherString = number.toFixed(); // 3.23124 --> 3
     const AnotherString = number.toFixed(2); // 3.23124 --> 3.23
 
-  //
+  //vaghti dar matn ha az ' estefade mikonim momken ast bug dashte bashad baraye hamin az backslash ( \ ) estefade mikonim. ex:
+  // ba \ mitavan be barname fahmand ke yek symbol jozv matn ast va etebar coding nadarad.
+    const text = 'Hi I\'m Parsa'; 
+  //vaghti bekhaiim dar mohid codenevisi yek matn ra dar chand khat neshan dahim mitavanim aval yek \ va sepas enter bezanim va matn khod ra benevisim (dar khorooji taghiri nmikonad faghad dar mohid codenevisi taghir mikonad). ex:
+    const Text = "Hi I'm Parsa \
+    I'm 20 yo \
+    living in Qazvin";
+  //ama agar bekhaiim ke dar khorooji ham dar chand khat neshan dade shavad, az \n (line break) estefade mikonim. ex:
+    const Text1 = "Hi I'm Parsa \n I'm 20 yo";
+
+  //agar bekhaiim tul string ra be soorat adad be dast biarim az method length estefade mikonim. ex:
+    console.log(text.length); // --> 12
+  
+  //index: shomarande ii ke har string ya numberi an ra darad. har caracter ya adad yek index darad, ke az 0 shoroo mishavad va ta harcheghadr ke variable ma tul dashte bashad tamam mishavad. agar bishtar az tedad index ha darkhast konim be ma undefined midahad. ex:
+    const text2 = "Parsa Sorsori";
+    console.log(text2[3]); // caracter ba index 3 --> "s"
+    console.log(text2[30]); // --> undefined
+
+  //ya agar bekhaiim befahmim dar yek variable yek caracter indexash chand ast, az method indexOf estefade mikonim. agar barname be ma -1 bargardand yani an caracter dar variable vojood nadarad. ex:
+    console.log(text2.indexOf("i")); // --> 12
+    console.log(text2.indexOf("H")); // --> -1
+  //ya baraks be an index bedahim va character an ra begirim. ex:
+    console.log(text2.charAt(4)); // --> "s"
+
+  //mikhaiim ba method includes befahmim aya yek caracter ya kalame khas dar variable ma vojood darad ya kheir. be soorat true ya false (boolean) javab midahad. ex:
+    console.log(text2.includes("Parsa")); // --> true
+
+  //ba method lowercase va uppercase mitavanim jomalat dakhel string ra be horoof koochak ya bozorg tabdil konim. ex:
+    console.log(text2.toLowerCase()); // --> "parsa sorsori"
+    console.log(text2.toUpperCase()); // --> "PARSA SORSORI"
+
+  //baraye joda kardan yek string az ham bar asas yek caracter khas az split estefade mishavad. agar be method voroodi nadahim, tak tak caractar ha ra joda mikonad. ex:
+    console.log(text2.split(" ")); // --> 'Parsa', 'Sorsori'
+    console.log(text2.split("")); // --> 'P', 'a', 'r', 's', 'a', ' ', 'S', 'o', 'r', 's', 'o', 'r', 'i'
+
+  //agar bekhaim yek kalameh khas ra ba yek kalameh dige jaigozin konim az methd replace estefade mikonim. ex:
+    console.log(text2.replace("Parsa", "Akbar")); // --> Akbar Sorsori
+
+  //method concat ke mesl jam kardan string ha ba ham amal mikonad va 2 string ra be ham vasl mikonad. ex:
+    const text3 = "is a Developer";
+    const finalText = text2.concat(" ", text3); //--> Parsa Sorsori is a Developer
+
+  //method trim faza haye khali va whitespace haye aval o akhar yek reshte ra hazf mikonad. ex:
+    const text4 = "    Parsa Sorsori    ";
+    console.log(text4.trim()); //--> "Parsa Sorsori"
+
+  //baraye extract kardn yek tike az matn bayad az method slice ya substring estefade konim. voroodi an index shoroo va index payan baraye estekhraj matn ast. tavajoh konim ke vaghti miguiim ta index 5 ra extract kon khod index 5 estekhraj nmishavad pas bayad yek index ezafe tar vared konim. agar be an yek index bedahim az an index shoroo va ta akhar string ra chap mikonad. agar be an adad manfi bedahim az akhar strig shoroo be estekhraj mikonad (be substring nmitavan adad manfi dad). ex:
+    console.log(text2.slice(0, 5)); //--> "Parsa"
+    console.log(text2.substring(0, 5)); //--> "Parsa"
+    console.log(text2.substr(0, 5)); //--> "Parsa" // substr ghadimi shode va digar estefade nmishavad.
 
 
 
 
-// Arrays :
+
+
+
+
+
+
+//Arrays:
   //array ha manand var ha hastand ama mitavan dar array meghdar bishtari data negahdari kard. manand yek container ke dar an data mirizim.
   // mitavan be 2 ravesh array hara sakht :
     var colors = new Array("red", "green", "blue");
@@ -336,41 +414,6 @@
       case colors[3]: console.log("rang shoma: " + colors[3]); break;
     default: console.log("Rang shoma dar in list nist !"); // zamani ke shart ma dar statement vojud nadashte bashe be soorat default in khat code ejra mishe. 
     }
-
-
-
-
-
-
-
-
-
-
-
-// && and || oprators:
-  // vaghti bekhahim dar statement haye sharti bekhahim do variable ro check konim ke bebinim aya har do true hastand, bein anha && gharar midahim:
-    var goodmood = true;
-    var gotsleep = true;
-
-    if(goodmood && gotsleep) {
-      console.log("emrooz rooz khoobie ;)")
-    } else {
-      console.log("emrooz halam khosh nist ;(")
-    }
-
-  //ama agar bekhahim bebinim ke aya hata yeki az anha true ast, bayad az || dar beineshan estefade konim:
-    var goodmood = true;
-    var gotsleep = true;
-    var breakfast = false;
-
-    if(goodmood || gotsleep || breakfast) { //faghad breakfast false ast ama do mored digar true hastand.
-      console.log("emrooz rooz khoobie ;)")
-    } else {
-      console.log("emrooz halam khosh nist ;(")
-    }
-
-
-
 
 
 
