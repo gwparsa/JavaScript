@@ -1,19 +1,19 @@
-// Writed by gwparsa - https://github.com/gwparsa
+//Writed by gwparsa - https://github.com/gwparsa
 
-// Introduction:
+//Introduction:
   // JS is most popular programming language. it is the language of the web and now well beyond the web. also, we can use JS in robots, gaming etc as well. but JS is a native web programming language.
 
 
 
 
-// Story of JS:
+//Story of JS:
   // dar sal 1995 avalin version js dar 10 rooz be vasile Brandon Eich tarahi shod. in zaban ebteda Mocha nam dasht va sepas be JavaScript taghir peyda kard.
   // hamchenin dar saal haye aval js shakhsi be nam Douglas Crockford be pishraft in zaban komak kard va dar mored an ketabi ba nam JavaScript:The Good Parts nevesht.
 
 
 
 
-// JavaScript Versions:
+//JavaScript Versions:
   // ECMA : Europen Computer Manfacture Association ya haman anjoman tolid computer europa ast ke version haye standard ziadi baraye JS montasher kard:
   // ECMAscript1 -> in 1997
   // ECMAscript2 -> never released!
@@ -28,7 +28,7 @@
 
 
 
-// Comment:
+//Comment:
   // mitavan yek comment baraye tozihat ba // dar aval khat sakht.
   /* hamchenin mitavanid az / va * estefade konid */
 
@@ -51,7 +51,7 @@
 
 
 
-// Variables:
+//Variables:
   // variables are like containers that hold somthing temporarily.
   //Anatomy:
     var chesse = "yummy";
@@ -112,7 +112,7 @@
 
 
 
-// Data Types:      
+//Data Types:      
   // variable ha anvae mokhtalefi darand manand Number, String, undefined, Object etc
     var mynum = 3; //Number, fargh nmikone adad Integer ( adad haye sahih ) ya Float ( adad haye ashari ) bashe.
     let mynum2 = 1.45;
@@ -137,7 +137,24 @@
 
 
 
-// Oprators:
+//Memory: 
+  //vaghti data haii ro dar variable zakhire mikonim anha niz dar memory computer ma zakhire mishavand. 2 noe memory darim: 1- Stack memory 2- Heap memory
+  //Stack memory: dar stack memory speed rate bala ama hafezeii ke mitavanim dar an data zakhire konim, kam ast. ham chenin data ha be soorat moratab va be tartib zakhire mishavand.
+  //Heap memory: baraks stack speed rate paiini drad ama meghdar hafeze bishtari ra be ma midahad. baraks stack data ha be soorat random dar memory zakhire mishavand va yek address khas dar memory darad.
+
+//Primitive & Reference type:
+  //hameye variable haye ma zir majmooe primitive type va reference type hastand. Primitive type: string - number - boolean - null - undefined - symbol. Reference type: array - object - function.
+  //vaghti ma yek varriable taarif mikonim, js noe an ra dar nazar migirad va be soorat primitive ya reference type an ra dar stack ya heap memory zakhire mikonad.
+  //dar primitive type ha vaghti yek data ra mikhaiim zakhire konim,js baste be noe data, an ra dar stack zakhire mikonad.
+  //ama dr reference type ha agar yek array dashte bashim, js khod array ra dar stack va meghdar array ra dar heap memory zakhire mikonad. data haye array zakhire shode dar heap yek address ya reference darand ke an address be variabli ke dar stack zakhire shode dade mishavad ta betavanad an ra farakhani konad.
+
+
+
+
+
+
+
+//Oprators:
   //oprator ha shamel symbol hayi hastand ke harkodam amaliat mokhtalefi ra shekl midahand, mesl: = , == , >< , + , - , / etc.
 
   //Arithmetic Operators (amalgar riazi): +  -  *  /  **  ++  --  %
@@ -353,14 +370,9 @@
 
   //method reverse jaye hame item haye array ra avaz mikonad va akharin item ra be aval array miavarad. ex:
     myArray.reverse(); //--> [3, 2, 1]
-
    
   
   
-
-  
-
-
 
 //Else If:zamani ke ma yek statement sharti darim az if va else estefade mikonim ama agar bekhahim shart ma option haye bishtari dashte bashad mitavan da bein if va else yek Else If gharar dad: 
     var colors = ['blue', 'red', 'green', 'yellow'];
