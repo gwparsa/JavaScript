@@ -147,9 +147,13 @@
   //vaghti ma yek varriable taarif mikonim, js noe an ra dar nazar migirad va be soorat primitive ya reference type an ra dar stack ya heap memory zakhire mikonad.
   //dar primitive type ha vaghti yek data ra mikhaiim zakhire konim,js baste be noe data, an ra dar stack zakhire mikonad.
   //ama dr reference type ha agar yek array dashte bashim, js khod array ra dar stack va meghdar array ra dar heap memory zakhire mikonad. data haye array zakhire shode dar heap yek address ya reference darand ke an address be variabli ke dar stack zakhire shode dade mishavad ta betavanad an ra farakhani konad.
+  //be hamin khater agar az referencce type ha dar jomalat sharti estefade konim momken ast fargh konad chon agar 2 array ya 2 object joda dashte bashim ref variable ha fargh konad, moghayese in 2 false mishavad.
 
+//Garbage collector: vaghti yek seri data dar heap memory darim ke hich jaye barname estefade nmishavand va hich ja reference ii nadarand ra hazf mikonad va be performance barname komak mikonad. ya vaghti mikhaiim dasti yek data ra az variable ii pak konim, kafi ast meqdar an ra ba null gharar dahim. ex: let x = null;
 
+//Mutation: be qabeliat taghirat dar meghdar ye variable ya taghirat dar property haye meqdar haye yek variable ra mutation miguyand. hame primitive type ha gheir mutable hastand ama reference type ha mutable hastand. ex: agar yek string mesl "milad" darim. ma nmitavanim caracter haye in string ra mesl array avaz konim ama mitavanim be medar haye array ya object meqdari ra ezafe ya kam konim.
 
+//Shallow copy & Deep copy(Clone deep): baraye copy krdn meqdar yek variable ast. shallow copy ra mitavanim zamani anjam dahim ke array ya object ma flat bashad va daroon anha array digeii nabashad, dar in halat ba method slice mitavanim az array khod shallow copy begirim. ama agar dar array ya object khod gheir az meqdar primitive type ha, reference type ham dashte bashim bayad ba dastoor JSON.parse(JSON.stringify()) deep copy anjam dahim. ravesh deep copy bekhater estefade ziad az ram va cpu pishnahad nmishavad.
 
 
 
@@ -213,6 +217,11 @@
   //Agar yek shart dashte bashim ke true ya false bashad va bekhaiim begooim agar true bood felan kar va agar false bood folan kar ra anjam bede, az in operator estefade mikonim. ex: shart ? agar true bood : agar false bood. ex:
     x > y ? console.log(x) : console.log(y);
   //Dar bala agar shart ma yani x bozorg tar az y bashad( true bashad ), code avali yani console.log(x) ra khorooji migirad ama agar x az y bozorg tar nabashad( false bashad ), code dovom yani console.log(y) ra khorooji migirad.
+
+  //Spread operator: meqdar haye dakhel yek array ra bedoon comma ta brackt haye dor an be ma neshan midahad. hamchenin mitavanim yek shallow copy az yek array ra be soorat sade dar biavarim.ex:
+    const copyData = [...data];//--> [1, 2, 3]
+    const names = ["parsa", "ali", "mamad"]; 
+    const newNameData = [...data, ...names]//-->[1, 2, 3, "parsa", "ali", "mamad"] //edgham kardan 2 array mesl method concat.
 
 
 
@@ -370,7 +379,18 @@
 
   //method reverse jaye hame item haye array ra avaz mikonad va akharin item ra be aval array miavarad. ex:
     myArray.reverse(); //--> [3, 2, 1]
-   
+
+  //Array Destructuring: rahi sade tar baraye mortab kardan meqdar haye array baraye estefade krdn dar yek string ast. ex:
+    const [name, lName, age] = ["Parsa", "Sorsori", 20]; //meqdar haye array dar variable haii ke dar bracket moshakhas shodand be tartib index hayeshan zakhire mishavand.
+    console.log(name, lName, age);//--> "Parsa", "Sorsori", 20
+
+    //agar bekhaiim lName ra zakhire nakonim an ra ba comma rad mikonim. ex:
+    const [name, , age] = ["Parsa", "Sorsori", 20]; 
+    console.log(name,  age);//--> "Parsa", 20
+    
+    //agar bekhaiim yek seri az data ha ra ham daroon yek array ghrar dahad niz mitavanim az spread operator( ... ) estefade konim. ex:
+    const [name, lName2, age, ...otherData] = ["Parsa", "Sorsori", 20, 1, 2, 3, 4]; //baad az age hame meqdar ha ra daroon array migozarad.
+    console.log(otherData);//--> [1, 2, 3, 4]
   
   
 
