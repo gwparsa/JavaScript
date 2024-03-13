@@ -223,6 +223,16 @@
     const names = ["parsa", "ali", "mamad"]; 
     const newNameData = [...data, ...names]//-->[1, 2, 3, "parsa", "ali", "mamad"] //edgham kardan 2 array mesl method concat.
 
+    const veryNewObj = {...myNewObj}; //copy gereftan az yek object
+    const finalNewObj = {...myNewObj, ...myNewObj}; //jam krn mohtaviat 2 object
+
+  //chaining operator: yek dot ( . ) ke bein object va key ha, function ha va ... gharar migirad. ex:
+    console.log(data.name);
+  
+  //Optional chaning operator: ?.
+  //mesl haman chaining operatoe amal mikonad ke dar address haye too dar too estefade mishavad. ex:
+  console.log(data?.name);
+
 
 
 
@@ -391,7 +401,49 @@
     //agar bekhaiim yek seri az data ha ra ham daroon yek array ghrar dahad niz mitavanim az spread operator( ... ) estefade konim. ex:
     const [name, lName2, age, ...otherData] = ["Parsa", "Sorsori", 20, 1, 2, 3, 4]; //baad az age hame meqdar ha ra daroon array migozarad.
     console.log(otherData);//--> [1, 2, 3, 4]
+
+
+
+
+//Object:
+  //baraye sakht object:
+    const myObject = {name: "Parsa", lastName: "Sorsori", age: 20, skills: ["HTML", "CSS", "JS"]}; // har kodam az in meqdar ha ra pair migooyand ke shamel key ka dar inja avali name ast va value ke "parsa" ast.
   
+  //agar bekhaiim yek item makhsoos ra az object begirim chizi be esm index ya tartib item ha nadarim. be jaye an niaz ast key ra dar kenar esm object benevisim. ya mitavanim esm key ra daroon "" va baz ham daroon [] gharar dahim(agar key ma yek adad bashad bayad be in ravesh an ra begirim). ex:
+    console.log(myObject.lastName); //--> "Sorsori"
+    console.log(myObject["lastName"]); //--> "Sorsori"
+
+  //baraye ezafe kardan data be onvan key be object bayad an ra dar object ba bracket gharar dahim. ama agar bekhaiim be value an ra ezafe konim faghad kafist esm an variable ra benevisim. ex:
+    const newSport = "Volleyball";
+    const myNewObj = {name: "parsa", lName: "sorsori", [newSport]: "my favorite game", sports: newSport, address: {country: "IR", province: "Qazvin"}};
+    
+  //baraye taghir dadan yek data khas dar object ha faghad an key ra select va meqdar an ra taghir midahim. ex:
+    myNewObj.name = "mamad";
+  
+  //baraye hazf krdn yek data khas dar object (yek pair az object) az dastoor delete estefade mikonim. ex:
+    delete myNewObj.name;
+
+  //ama agar bekhaiim faghad value yek pair ma reset shavad, be an null midahim. ex:
+    myNewObj.name = null;
+
+  //in keyword: neshan midahad ke aya yek key dar an object vojood darad ya kheir. key bayad hatman dakhel "" gharar begirad. ex:
+    console.log("name" in myNewObj); //--> true.
+
+  //agar bekhaiim key haye yek object ya value haye anha ra jodagane bedast biavarim az method keys ya values estefade mikonim ta meqdar ha ra be soorat yek array be ma neshan dahad. ex:
+    console.log(Object.keys(myNewObj)); //--> ["name", "lName", "Volleyball", "sports", "address"]
+    console.log(Object.values(myNewObj)); //--> ["parsa", "sorsori", "my favorite game", "Volleyball", {country: "IR", province: "Qazvin"}]
+
+  //Object Destructuring: agar bekhaiim etelaat dakhel object ra daroon variable berizim bayad be soorat zir amal konim. ama in variable ha mesl array destructuring tartib nadarand balke bayad esm key hara ra dorost benevisim. darvaghe esm key ma haman esm variable ma khahad bood. ex:
+    const {name, age} = myNewObj; //--> "parsa", 20
+
+  //ama agar ma az ghabl masalan yek variable be esm age dar barname dashtim va alan ham in variable sakhte shode, barae inke error nadahad bayad esm variablei ke mikhaiim age ma dar an zakhire shavad chiz digari bashad. ex:
+    const {name, age: age2} = myNewObj;
+  
+  //vaghti ma chand object dar ham dige dashte bashim va bekhaiim key va value haye dakhel an ha ra destructure konim bayad be soorat zir estefade konim. ex:
+    const {name, age, address: {country, province} } = myNewObj;
+    console.log(address);//--> "IR", "Qazvin"
+
+    
   
 
 //Else If:zamani ke ma yek statement sharti darim az if va else estefade mikonim ama agar bekhahim shart ma option haye bishtari dashte bashad mitavan da bein if va else yek Else If gharar dad: 
