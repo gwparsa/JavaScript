@@ -321,6 +321,19 @@
   //Template Literals: baraye estefade az variable ha dar ye string mitavanim be soorat zir amal konim. bejaye "" az `` (backtick) baraye neveshtan string estefade konim va agar mikhaim variablei ra dakhel in string gharar dahim bayad az ${variable} estefade konim. ex:
     const textWithVars = `Hi. My name is ${text2}.`; //--> "Hi. My name is Parsa Sorsori."
 
+  //Continue & Break:
+  //mamoolan dar loop ha ejra mishavad. break mitavanad yek loop ra motevaghef konad. ex:
+    while ( i < 10 ) {
+      console.log(i);
+      if(i === 6) break; //vaghti ke i barabar ba 6 bood loop ra motevaghef mikonad.
+      i++;
+    }
+  //continue mokhalef break ast va loop ra edame midahad.
+    while ( i < 10 ) {
+      console.log(i);
+      if(i === 6) continue; //vaghti ke i barabar ba 6 bood loop ra pause mikonad va az dafee baad loop ra edame midahad. masalan inja az 1 ta 10 ra log migirad ama 6 ra nmigirad.
+      i++;
+    }
 
 
 
@@ -449,43 +462,73 @@
 //Conditional statement (Jomalat Sharti):
   //ba in jomalat mitavanim shart ha ra be barname biarim.
 
+  //if, else if, else:
+    if( x > y ){ console.log(x); }; //shart ma bayad dar () qarar begirad. natije in shart ha be soorat true ya false khahad bood. //agar shart ma bargharar bood dastoor haye dakhel {} ra anjam midahad.
+
+  //hala agar shart dakhel () true nabood va bekhiim yek dastoor dige ejra shavad az dastoor else estefade mikonim. ex:
+    if( x > y ){
+      console.log("x is bigger than y");
+    } else {
+      console.log("y is bigger than x"); //agar shart dakhel () true nabashad dastoorat else ma anjam mishavad.
+    }
+
+  //age bish az 2 halat khahim dasht va mikhaihim 3 shart be bala bezarim, bayad az else if estefade konim. ex:
+    if( x > y ){
+      console.log("x is bigger than y");
+    } else if( x = y ){
+      console.log("x and y are the same"); //inja yek shart digar ezafe kardim. mitavan be soorat binahayat az if else estefade kard.
+    } else {
+      console.log("y is bigger than x"); //agar shart dakhel () true nabashad dastoorat else ma anjam mishavad.
+    }
+
+  //Switch case:
+  //gahi oghat mikhaiim bebinim ke aya variable ma ba yek chiz digar barabar ast ya kheir. bozorgtar ya koochiktar boodan dar switch case vojood nadarad. ex:
+    switch(name){ //variableii ke maikhaiim moqayese rooye an anjam shavad ra dakhel () minevisim.
+      case "Parsa": console.log("esm shoma: Parsa"); break; //baraye inke vaghti statement ma yek javab true gereft az kol statement kharej beshe va dobare amal tekrar nashe az break estefade mikonim.
+      case "Ali": console.log("esm shoma: Ali"); break;
+      case "Mamad": console.log("esm shoma: Mamad"); break;
+      case "Abbas": console.log("esm shoma: Abbas"); break;
+      default: console.log("esm shoma dar list nist!"); // zamani ke shart ma dar statement vojud nadashte bashe be soorat default in khat code ejra mishe. 
+    }
+  
 
 
 
-
-  //Else If:zamani ke ma yek statement sharti darim az if va else estefade mikonim ama agar bekhahim shart ma option haye bishtari dashte bashad mitavan da bein if va else yek Else If gharar dad: 
-      var colors = ['blue', 'red', 'green', 'yellow'];
-      var selectedColor = colors[1]; // Dar inja yeki az rang haye colors ro entekhab va dar statement paiin mikhahim peydayash konim:
-      if (selectedColor == colors[0]) {
-        console.log("rang entekhabi: " + colors[0]);
-      } else if(selectedColor == colors[1]) {
-        console.log("rang entekhabi: " + colors[1]);
-      } else if(selectedColor == colors[2]) {
-        console.log("rang entekhabi: " + colors[2]);
-      } else {
-        console.log("rang entekhabi: " + colors[3]);
-      }
-    
+//Loops:
+  //harvaght bekhaiim yek code ra chand bar ejra konim mitavanim az loop estefade konim ta yek code ra baraye ma chandin bar run konad. loop ha bayad noghte payani dashte bashand.
 
 
+  //For loop:
+  //dakhel () neshan midahim ke chandbar in amal bayad anjam shavad va dar {} neshan midahim ke che amal ya code ii bayad anjam shavad. yek variable be esm i be onvan index taarif mikonim va ta zamani ke shart ma true bashad code dakhel {} ejra va yek vahed be i ezafe mishavad.
+    for (let i = 1; i < 11; i++) {
+      console.log(i); //ta zamani ke shart true bashad in khat code ejra mishavad.
+    }
+  
+  //baraye estefade az for loop faghad baraye array ha az for-of estefade mikonim. ex:
+    const myArray = [2, 3, 4, 6];
+    for (let i of myArray) { 
+    //inja faghad yek variable be onvan index sakhtim. in index be andae length array ma code haye dakhel {} ra ejra mikonad.
+      console.log(i); //--> 2, 3, 4, 6
+    }
 
-  //Switch:
-    //gahi oghat shart haye ma be ghadri ziad ast ke nmitavanim az if va else estefade konim pas mitavanim az switch statement estefade konim :
-      switch(selectedColor){
-        case colors[0]: console.log("rang shoma: " + colors[0]); break; //baraye inke vaghti statement ma yek javab true gereft az kol statement kharej beshe va dobare amal tekrar nashe az break; estefade mikonim.
-        case colors[1]: console.log("rang shoma: " + colors[1]); break;
-        case colors[2]: console.log("rang shoma: " + colors[2]); break;
-        case colors[3]: console.log("rang shoma: " + colors[3]); break;
-      default: console.log("Rang shoma dar in list nist !"); // zamani ke shart ma dar statement vojud nadashte bashe be soorat default in khat code ejra mishe. 
-      }
+  //baraye estefade az for loop faghad dar object ha az for-in estefade mikonim. ex:
+    const myObj = {name: "Parsa", lastName: "Sorsori", age: 20};
+    for (let key in myObj) {
+      console.log(key); //--> name, lastName, age
+      console.log([key]); //--> "Parsa", "Sorsori", 20
+    }
+  
+  
+  //While loop:
+  //dakhel () shart khod ra minevisim va ta zamani ke trrue bashad code dakhel {} ra run mikonad. ex:
+    let i = 1; //variable index bayad biroon while taarif shavad.
+    while ( i < 10 ) {
+      console.log(i);
+      i++; //mesl for bayad be index yek vahed ezafe konim ama inbar daroon {} va dar akhar code ha ezafe mikonim.
+    }
 
-
-
-
-  //Loops:
-    // gahhi oghat ma mikhahim meghdari az code hara be tor modavem ejra konim ta be javab akhar beresad, gahi oghat niaz darim ta enghadr yek statement tekrar shavad ta be javab beresad.
-    // marsoom tarin halat loops dar js be vasile for anjam mishavad
-      for(var i = 0; i < 10; i++){
-          //code haye in ghesmat darsoorati ke shart bala yani ta zamani ke i koochek tar az 10 bashad, in code ejra mishavad.
-        console.log(i);
-      }
+  // do-while ham haman while ast ama chon shart ma baad az code ha miayad, hata agar shart false ham bashad yekbar an code ra ejra mikonad.
+    do {
+      console.log(i);
+      i++;
+    } while ( i < 10 );
