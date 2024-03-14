@@ -443,42 +443,49 @@
     const {name, age, address: {country, province} } = myNewObj;
     console.log(address);//--> "IR", "Qazvin"
 
+
+
+
+//Conditional statement (Jomalat Sharti):
+  //ba in jomalat mitavanim shart ha ra be barname biarim.
+
+
+
+
+
+  //Else If:zamani ke ma yek statement sharti darim az if va else estefade mikonim ama agar bekhahim shart ma option haye bishtari dashte bashad mitavan da bein if va else yek Else If gharar dad: 
+      var colors = ['blue', 'red', 'green', 'yellow'];
+      var selectedColor = colors[1]; // Dar inja yeki az rang haye colors ro entekhab va dar statement paiin mikhahim peydayash konim:
+      if (selectedColor == colors[0]) {
+        console.log("rang entekhabi: " + colors[0]);
+      } else if(selectedColor == colors[1]) {
+        console.log("rang entekhabi: " + colors[1]);
+      } else if(selectedColor == colors[2]) {
+        console.log("rang entekhabi: " + colors[2]);
+      } else {
+        console.log("rang entekhabi: " + colors[3]);
+      }
     
-  
-
-//Else If:zamani ke ma yek statement sharti darim az if va else estefade mikonim ama agar bekhahim shart ma option haye bishtari dashte bashad mitavan da bein if va else yek Else If gharar dad: 
-    var colors = ['blue', 'red', 'green', 'yellow'];
-    var selectedColor = colors[1]; // Dar inja yeki az rang haye colors ro entekhab va dar statement paiin mikhahim peydayash konim:
-    if (selectedColor == colors[0]) {
-      console.log("rang entekhabi: " + colors[0]);
-    } else if(selectedColor == colors[1]) {
-      console.log("rang entekhabi: " + colors[1]);
-    } else if(selectedColor == colors[2]) {
-      console.log("rang entekhabi: " + colors[2]);
-    } else {
-      console.log("rang entekhabi: " + colors[3]);
-    }
-  
 
 
 
-//Switch:
-  //gahi oghat shart haye ma be ghadri ziad ast ke nmitavanim az if va else estefade konim pas mitavanim az switch statement estefade konim :
-    switch(selectedColor){
-      case colors[0]: console.log("rang shoma: " + colors[0]); break; //baraye inke vaghti statement ma yek javab true gereft az kol statement kharej beshe va dobare amal tekrar nashe az break; estefade mikonim.
-      case colors[1]: console.log("rang shoma: " + colors[1]); break;
-      case colors[2]: console.log("rang shoma: " + colors[2]); break;
-      case colors[3]: console.log("rang shoma: " + colors[3]); break;
-    default: console.log("Rang shoma dar in list nist !"); // zamani ke shart ma dar statement vojud nadashte bashe be soorat default in khat code ejra mishe. 
-    }
+  //Switch:
+    //gahi oghat shart haye ma be ghadri ziad ast ke nmitavanim az if va else estefade konim pas mitavanim az switch statement estefade konim :
+      switch(selectedColor){
+        case colors[0]: console.log("rang shoma: " + colors[0]); break; //baraye inke vaghti statement ma yek javab true gereft az kol statement kharej beshe va dobare amal tekrar nashe az break; estefade mikonim.
+        case colors[1]: console.log("rang shoma: " + colors[1]); break;
+        case colors[2]: console.log("rang shoma: " + colors[2]); break;
+        case colors[3]: console.log("rang shoma: " + colors[3]); break;
+      default: console.log("Rang shoma dar in list nist !"); // zamani ke shart ma dar statement vojud nadashte bashe be soorat default in khat code ejra mishe. 
+      }
 
 
 
 
-//Loops:
-  // gahhi oghat ma mikhahim meghdari az code hara be tor modavem ejra konim ta be javab akhar beresad, gahi oghat niaz darim ta enghadr yek statement tekrar shavad ta be javab beresad.
-  // marsoom tarin halat loops dar js be vasile for anjam mishavad
-    for(var i = 0; i < 10; i++){
-        //code haye in ghesmat darsoorati ke shart bala yani ta zamani ke i koochek tar az 10 bashad, in code ejra mishavad.
-      console.log(i);
-    }
+  //Loops:
+    // gahhi oghat ma mikhahim meghdari az code hara be tor modavem ejra konim ta be javab akhar beresad, gahi oghat niaz darim ta enghadr yek statement tekrar shavad ta be javab beresad.
+    // marsoom tarin halat loops dar js be vasile for anjam mishavad
+      for(var i = 0; i < 10; i++){
+          //code haye in ghesmat darsoorati ke shart bala yani ta zamani ke i koochek tar az 10 bashad, in code ejra mishavad.
+        console.log(i);
+      }
