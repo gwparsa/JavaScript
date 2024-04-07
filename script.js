@@ -492,11 +492,8 @@
     }
   
 
-
-
-//Loops:
+  //Loops:
   //harvaght bekhaiim yek code ra chand bar ejra konim mitavanim az loop estefade konim ta yek code ra baraye ma chandin bar run konad. loop ha bayad noghte payani dashte bashand.
-
 
   //For loop:
   //dakhel () neshan midahim ke chandbar in amal bayad anjam shavad va dar {} neshan midahim ke che amal ya code ii bayad anjam shavad. yek variable be esm i be onvan index taarif mikonim va ta zamani ke shart ma true bashad code dakhel {} ejra va yek vahed be i ezafe mishavad.
@@ -532,3 +529,8 @@
       console.log(i);
       i++;
     } while ( i < 10 );
+
+
+
+//Functions:
+  //yek block ya tike az code hastand ke har vaght bakhiim mitavanim an ra farakhani konim, be an voroodi dahim va az an khorooji begirim.
