@@ -524,7 +524,7 @@
       i++; //mesl for bayad be index yek vahed ezafe konim ama inbar daroon {} va dar akhar code ha ezafe mikonim.
     }
 
-  // do-while ham haman while ast ama chon shart ma baad az code ha miayad, hata agar shart false ham bashad yekbar an code ra ejra mikonad.
+  //do-while ham haman while ast ama chon shart ma baad az code ha miayad, hata agar shart false ham bashad yekbar an code ra ejra mikonad.
     do {
       console.log(i);
       i++;
@@ -532,5 +532,42 @@
 
 
 
+
 //Functions:
-  //yek block ya tike az code hastand ke har vaght bakhiim mitavanim an ra farakhani konim, be an voroodi dahim va az an khorooji begirim.
+  //yek tike code ke har dafee bekhaiim mitavanim an ra farakhani va ejra konim.
+  //gahi oghat niaz darim ke chand khat code ra dar barname hayeman chand bar tekrar konim. mitavanim code hara dar function gharar dahim va har dafee an ra farakhani konim, be an voroodi dahim va khorooji begirim. pas ba function ha niazi be tekrar code ha nakhahim dasht.
+    function myFunction() {
+      console.log("hi")
+    }; //syntax koli yek function
+  
+  //baraye call be function ya haman seda zadan function be soorat zir amal mikonim:
+    myFunction(); // --> "hi"
+
+  //mitavanim dar () be function voroodi dahim. yek esm delkhah mesl "adad" dar () minevisim va ba an dar function rooye an amal haii anjam midahim. be voroodi parameter migooim. ex:
+    function duplicateFunction(adad) {
+        console.log(adad*2);
+    }; //yek adad ra be an midahim va an ra baraye ma 2 barabar mikonad.
+
+    duplicateFunction(5); // --> 10    //dakhel () dar seda zanande voroodi ra vared mikonim. 5 be onvan parameter be function bala ersal mishavad va khorooji ra log migirad. adad 5 inja argument mibashad.
+
+  //mitavanim be function ha bishtar az yek voroodi dahim:
+    function randomFunction(adad1, adad2, adad3){
+      console.log(adad1 + adad2 + adad3);
+    };
+    randomFunction(5, 10, 15);
+
+  //return keyword: gahi oghat ma be khorooji function ha niaz darim ta dar code hayeman estefade konim va faghad nemikhahim an ra dar console log begirim. code haii ke baad az return neveshte shode bashand ejra nmishavand chon return be manaye in ast ke kare ma dar function tamam shode va code haye baad an ra nmikhanad. ex:
+    function randomFunction(adad1, adad2, adad3){
+      const result = adad1 + adad2 + adad3;
+      return result; //value result ra be onvan khorooji be ma midahad.
+    };
+    randomFunction(5, 10, 15);
+
+  //Scopes:
+  //be manaye mahdoode dastresi be yek variable ast. be 3 daste Global, Local va Block scope taghsim mishavand. 
+  //Global Scope: variable haii ke dar global scope gharar migirand mitavandn dar hame jaye barname estefade shavand zira dar birooni tarin laye in variable taarif shode.
+  //Local Scope(Function Scope): variable haii ke dar yek function taarif mishavand va faghad dar haman function ghabel estefade mibashad va nmitavanim kharej az function an ra taghir bedahim.
+  //Block Scope: be mahdoode ben har {} ra migooyand. variable haii ke dar yek {} sakhte mishavand, dar haman block mishavad be anha dastresi dasht. masalan dar if ya for ke {} darand niz in mozu mohem ast.
+
+  //Tafavot let, const va var:
+  //
