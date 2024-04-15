@@ -570,4 +570,26 @@
   //Block Scope: be mahdoode ben har {} ra migooyand. variable haii ke dar yek {} sakhte mishavand, dar haman block mishavad be anha dastresi dasht. masalan dar if ya for ke {} darand niz in mozu mohem ast.
 
   //Tafavot let, const va var:
-  //
+  //agar ba let ya const 2 variable taarif konim in 2 nmitavanand ham nam bashand ama agar ba var 2 variable besazim mitavanim chand bar ba yek esm variable sakht. ex:
+    // const yekVar = 10;
+    // let yekVar = 15; // --> Error
+    // var name = "ali";
+    // var name = "mamad"; // --> No Error
+  //let va const qavaed block scope ra raayat mikonand ama var in qaede ra nmishenasad va mitavan dar kharej az block ham be an dastresi dasht.
+
+  //Hoisting: qabl az ejra shodan code ha tavasot browser, har block, variable va function ra be balatarin noghte scope khod mibarad. baraye hamin ast ke vaghti yek fuction ra ghabl khod block function farakhani mikonim, amal mikonad. baraye variable haye let va const hoisting anjam nmishavad va faghad dar var in amal anjam mishavad. ex:
+    saySomething(); // --> salam
+
+    function saySomething(){
+      console.log("salam");
+    };
+
+    //*********
+
+    console.log(hoisted); // --> 5
+    console.log(secHoisted); // --> Error
+    var hoisted = 5; 
+    const secHoisted = 6;
+
+  //Strict Mode: halat sakhtgirane javascript ra migooim. dar in halat bug ha va error haii ke javascript az an cheshmpooshi karde ra vared barname mikonad va baes mishavad ke koochek tarin error ra be ma neshan khahad dad. baraye faal kardn in mode bayad dar avalin khat barname "use strict"; ra benevisim.
+    
