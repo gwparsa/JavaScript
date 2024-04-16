@@ -593,3 +593,41 @@
 
   //Strict Mode: halat sakhtgirane javascript ra migooim. dar in halat bug ha va error haii ke javascript az an cheshmpooshi karde ra vared barname mikonad va baes mishavad ke koochek tarin error ra be ma neshan khahad dad. baraye faal kardn in mode bayad dar avalin khat barname "use strict"; ra benevisim.
     
+  //Function Expression: haman taarif kardan function ast ama dar yek variable zakhire mishavad. chon function ma dar yek variable const ya let zakhire mishavad, amaliat hoisting anjam nmishavad. ex:
+    const saySomething = function(){};
+
+  //Anonymous Function: function ma hich esmi nadarad. ex:
+    //function(){};
+
+  //IIFE(Immediately Invoked Function Expression): function hayi hastand ke haman lahze ke taarifeshan mikonim ejra mishavand. va mesl baghie function ha niaz be farakhani nadarand. az function haye anonymous estefade mikonim va be aval o akhar function yek () ezafe mikonim va yek () ham dar akhar migozarim. ex:
+    (function(){
+      console.log("hellow");
+    })();
+
+  //Arrow Function: functioni ke dar yek variable rikhte mishavad va besiar sade tar az baghie function ha ast. vaghti ke amaliat ma besiar sade ast va dar yek khat ghabel anjam ast mesl mesal paiin niazi be return kardan va gozashtan {} nist va faghad amaliat ra minevisim. ex:
+    const sum = (num1, num2) => num1 + num2;
+    console.log(sum(1, 2)); //--> 3
+
+  //hata agar faghad yek parameter dashte bashim mitavanim () ra ham nazarim.
+    const exSum = num1 => num1 + 2;
+    console.log(exSum(1)); //--> 3
+
+  //ama agar chand variable ashte bashim va chand khat code dashte bashim, bayad hame qavaed raayat shavad. ex:
+    const newSum = (num1, num2) => {
+      const newNum1 = num1 + 2;
+      const newNum2 = num2 + 1;
+      return newNum1 + newNum2;
+    };
+
+  //Higher Order and Callback Function: mitavanim be onvan voroodi ya parameter bejoz number o string o ... yek function dige ro be function jadid be onvan voroodi bedim. functioni ke be onvan voroodi be function digar dade mishavad callback function va functioni ke function voroodi be and dade shode, higher order function gofte mishavad. ex:
+    const sum1 = (num1, num2, callback) => { //sevomin parameter function voroodi ast.
+      const summation = num1 + num2;
+      const result = summation ** 2;
+      callback(result);
+    };
+
+    const showMessage = (text) => console.log(`the result is ${text}`);
+
+    sum1(1, 2, showMessage); // dar inja argument sevom functioni ast ke be onvan callback dade mishavad.
+
+  
