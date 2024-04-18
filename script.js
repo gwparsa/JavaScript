@@ -630,4 +630,26 @@
 
     sum1(1, 2, showMessage); // dar inja argument sevom functioni ast ke be onvan callback dade mishavad.
 
+  //forEach: data hayi ke be samt ma miayand aksaran be soorat array hastand. loop for baraye array ha ast.
+  //ma mitavanestim ba for of ham ba array ha kar konim ama forEach be ma index ha ra ham midahad. ex:
+    const numbers = [2, 3, 4, 5, 6, 7];
+    numbers.forEach((number, index, array)=>{ //ba yek seri kalamat kelidi mesl index va array mitavanim etelaat begirim.
+      console.log(number*2); //--> 4, 6, 8, 10, 12, 14
+      console.log(index); //--> 0, 1, 2, 3, 4, 5
+      console.log(array); //--> [2, 3, 4, 5, 6, 7]
+    });
   
+  //map: nahve piadesazi taghriban mesl forEach ast ama ba kami taghirat. tavafot map ba forEach in ast ke natije ra baraye ma dar yek array mirizad va return mikonad. pas bayad an ra dar yek variable berizim. ex:
+
+    const newNumbers = numbers.map((number)=>{
+      return number * 2; // faghad kafist amaliat ra return konim ta dar array zakhire va return dade shavad.
+    }); //--> [4, 6, 8, 10, 12, 14]
+
+  //find: baraye peyda krdan yek item dar yek array mibashad. mesl map neveshte mishavad ba kami taghirat ke baz ham natije ra dar yek array be ma bar migardanad. dar find ma boolean return mikonim. hamishe avalin natije ra be ma midahad va baraye list hayi ke chand bar yek chiz dar anha tekrar shode bashad monaseb nist. ex:
+    const result = numbers.find((number) => number === 5); // adadi ke ba 5 mosavi bashad ra ba true return mikonad, dar variable zakhire va amaliat ra motevaghef mikonad.
+    const indexResult = numbers.findIndex((number) => number === 5); // haman kar find ra anjam midahad ama inbar index 5 ra dar array be ma midahad.
+
+  //filter: shabih be find ast ama ba kami taghirat. dar filter hameye natije haii ke migooim ra peyda mikonad ama find baad az peyda kardan yek natije an ra motevaghef mikard. ex:
+    const anothrerNumbers = [2, 3, 4, 5, 6, 7, 5, 8, 5];
+    const filteredItem = anothrerNumbers.filter((number) => number === 5); //--> [5, 5, 5] hame be soorat yek array dar variable filteredItem zakhire mishavad.
+    const againFilteredItem = anothrerNumbers.filter((number) => number > 5); //--> [6, 7, 8]
