@@ -254,6 +254,7 @@
 
 
 //Methods:
+  //function haii ke dar object bashand method ha hastand ke baraye ma kar haii ra anjam midahand.
   //agar bekhaiim yek number ra be string tabdil konim. ( .toString() ) 
     const anString = number.toString();
   //va baraks baraye tabdil yek string be number az method zir estefade mikonim:
@@ -653,3 +654,34 @@
     const anothrerNumbers = [2, 3, 4, 5, 6, 7, 5, 8, 5];
     const filteredItem = anothrerNumbers.filter((number) => number === 5); //--> [5, 5, 5] hame be soorat yek array dar variable filteredItem zakhire mishavad.
     const againFilteredItem = anothrerNumbers.filter((number) => number > 5); //--> [6, 7, 8]
+
+  //reduce: kol value array ra baraye ma ba ham jam mikonad va yek meghdar vahed be ma return mikonad. ex:
+    const myNumbers = [2, 3, 4, 5, 6, 7, 8];
+    const myResult = myNumbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0); //baraye reduce bayad yek function va yek adad be an dahim ke az an adad shoru be jam krdn mikonad. dar inja yek arrow function be onvan voroodi aval va adad 0 be onvan voroodi dovom be reduce dade shode.
+    console.log(accumulator); //--> 35
+
+  //every & some: in method ha baresi mikonand ke aya dar array ma aya yek shart bargharar ast ya kheir. baraye method every bayad hame value ha true bashand ta true shavad ama baraye some, agar hata yeki az anha true bashad khorooji ham true mishavad. khorooji be soorat boolean khahad bood. ex:
+    const data = [1, 2, 3];
+    const numberVerify = data.every((item) => typeof item === "number") //--> true. agar type hame item haye array number bashad true mishavad.
+    const data2 = [1, "salam", 3];
+    const stringVerify = data2.some((item) => typeof item === "string") //--> true. agar faghad yeki az item haye array string bashad true mishavad.
+
+  //this: in this be parent ya owner khod eshare mikonad va an ra neshan midahad. bastegi be an darad ke dar koja ya dar che scope ii ejra shavad. ex:
+    const data3 = {
+      fName: "parsa",
+      lName: "sorsori",
+      showAge: function() {
+        console.log(this); // owner ya parent khod ra neshan midahad ke dar inja object data3 ast.
+      },
+    };
+    data3.showAge();
+  //this in arrow functions: 
+
+    const data4 = {
+      fName: "parsa",
+      lName: "sorsori",
+      showAge: () => {
+        console.log(this); // dar arrow function be owner an object ke dar an dar hal ejra ast eshare mikonad ke inja global scope ast ya Window ra neshan midahad.
+      },
+    };
+    data4.showAge();
