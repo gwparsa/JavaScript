@@ -555,7 +555,7 @@
   //mitavanim dar () be function voroodi dahim. yek esm delkhah mesl "adad" dar () minevisim va ba an dar function rooye an amal haii anjam midahim. be voroodi parameter migooim. ex:
     function duplicateFunction(adad) {
         console.log(adad*2);
-    }; //yek adad ra be an midahim va an ra baraye ma 2 barabar mikonad.
+    }; //yek adad ra be an midahim va n ra baraye ma 2 barabar mikonad.
 
     duplicateFunction(5); // --> 10    //dakhel () dar seda zanande voroodi ra vared mikonim. 5 be onvan parameter be function bala ersal mishavad va khorooji ra log migirad. adad 5 inja argument mibashad.
 
@@ -754,3 +754,47 @@
 
 
 
+//Math Object:
+  //objecti az maqadir riaziat ke js dar ekhtiar ma migozarad ta betavanim dar barname hayeman az anha estefade konim.
+    console.log(Math); //ingoone mitavanim hame maqadiri ke js dar ekhtiar ma gozashte ra bebinim.
+
+  //round: baraye rond kardan yek adad ashari az in method estefade mishavad. agar ashar in adad az nim paiin tar bashad be samt paiin va agar az nim bishtar bashad be samt bala rond mishavad. ex:
+    const unround = 5.23;
+    Math.round(unround); //--> 5
+
+  //ceil: agar bekhaiim adad haye ashari ra faghad be samt bala rond konim. ex:
+    Math.ceil(unround); //--> 6
+
+  //floor: agar bekhaiim adad haye ashari ra faghad be samt paiin rond konim. ex:
+    Math.floor(unround); //--> 5
+
+  //trunc: agar bekhaiim faghad ashar yek adad ra hazf konad va adad kamel ra be ma bargardanad. ex:
+    Math.trunc(unround); //--> 5
+
+  //pow: baraye be tavan resanden yek adad. voroodi aval adad ma va voroodi dovom, tavan ma khahad bood. ex:
+    Math.pow(2, 3); //--> 8
+
+  //sqrt: baraye jazr gereftan az yek adad estefade mishavad. ex:
+    Math.sqrt(2); //--> 1.414213...
+  
+  //abs: qadr motlagh yek adad ra midahad. ex:
+    Math.abs(-3); //--> 3
+    
+  //mosalasat: voroodi ra be sooorat radian migirad va khorooji midahad. ex:
+    Math.sin(1.34); //--> 1.2246...
+    Math.cos();
+    Math.tan();
+
+  //log: logaritm ra hesa mikonad. ex:
+    Math.log();
+
+  //min & max: minimum va maximum yekseri adad ra mitavanim peyda konim. ex:
+    Math.min(1, -3, 3, 4, 5, 6) //--> -3
+    Math.max(1, -3, 3, 4, 5, 6) //--> 6
+
+  //random: ba in method mitavanim adad haye random tolid konim. ama in adad ha bein 0 ta 1 hastand. ex:
+    Math.random();
+  //agar bekhaiim adad haye bishtar az 1 begirim mitavanim an ra zarb konim, masalan agar bekhaiim az 0 ta 10 ra be ma bedahad, natije ra zarb dar 10 mikonim. ex:
+    console.log(Math.random() * 10); //--> 8.12324... //--> 3.12324...
+    
+  
