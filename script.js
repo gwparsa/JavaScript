@@ -51,6 +51,14 @@
 
 
 
+//Encapsulation: in ebarat yani ma data hayeman ra dar ja haye mokhtalef ba estefade az scope ha mohafezat konim va nagozarim ta data hayi ke nmikhaiim az dakhel function hayeman nasht konad.
+//State Retention: betavanim dar amaliateman shomaresh yek data khas ra negah darim.
+//Lexical Scope: mafhoomi ke yek function be che variable haii dastresi darad migooyand.
+//Memorization: yek function closure mitavanad baraye chandin variable estefade shavad va har kodam maqadir makhsoos khod ra dahte bashand.
+
+
+
+
 //Variables:
   // variables are like containers that hold somthing temporarily.
   //Anatomy:
@@ -685,3 +693,64 @@
       },
     };
     data4.showAge();
+
+  //bind method: be keyword this yek maqsad moshakhas midahad. this digar object haye digar ra khorooji nmidahad ela objecti ke ma baraye an moshakhas mikonim.
+    const myData = {name: "Ali"};
+    data4 = data4.bind(myData); //dar inja migooim this dar function data4 ke dar bala in object ra neshan midad alan object myData ra neshan khahad dad.
+    data4.showAge();
+
+  //call & apply methods: mesl bind amal mikonad ama digar nmikhahad ta ma mesl syntax bala function bind shode ra dakhel khodash berizim va sepas an ra ejra konim. dar call va apply faghad az method estefade mikonim va niaz be farakhani dobare function ya object nist zira khod ejra mishavad. ex:
+    data4.call(myData, 27, "mamad"); //argument aval baraye meqdar this mibashad va baad az an baghi argument haii ast ke mikhaiim be function befrestim.
+    data4.apply(myData, [27, "mamad"]); //apply ham haman kar ra mikonad ama baghie argument ha bejoz meqdar this bayad dar array neveshte shavand.
+
+  //Setter & Getter: qablan baraye dashtan do value mesl firstname va lastname, anha ro ba `` va ${} an ra khorooji mikardim ama alan mitavanim yek getter va setter ke yek function hastand, dakhel objecteman tarif konim (ba keyword get va set) va code anha ra benevisim. ex:
+    const personalData = {
+      firstName: "Parsa",
+      lastName: "Sorsori",
+      get fullName(){ //agar dataii ke dar object ast ra dar paiin farakhani konim, in function vared amal mishavad va code ha ra ejra mikonad.
+        return `${firstName} ${lastName}`;
+      },
+      set fullName(string){ //agar dar paiin abject be fullName data dade shavad vared in function mishavad va ba method split az ham joda va ba index hayeshan dar object mineshinand.
+        this.firstName = string.split(" ")[0];
+        this.lastName = string.split(" ")[1];
+      },
+    };
+
+    console.log(personalData.fullName); //baraye get //--> Parsa Sorsori
+    personalData.fullName = "Ali Karimi" // baraye set
+
+  //closure: yek function ke dar khod yek function digar darad ke yek meqdari ra return mikonad. functioni ke dakhel ast closure va function birooni factory function ast. ex:
+    const like2 = () => {
+      let likeccounter = 0; //dar in function state retention nadarim chon har dafe ke ejrayash konim like counter reset mishavad va har dafe 1 ra namayesh midahad.
+      likeccounter++;
+      return likeccounter;
+    };
+
+    const like = () => { //factory function
+      let likescounter = 0; //dar inja ham paydari etelaat raayat shode va ham amniat etelaat.
+      return function(){ //closure function
+        likescounter++;
+        return likescounter;
+      };
+    };
+
+    const likesPost1 = like(); //agar 3 post dashte bashim ke bekhaim like haye an ra beshmarim mitavanim be in soorat az yek function estefade konim va faghad esm variable ra taghir dahim.
+    const likesPost2 = like(); 
+    const likesPost3 = like(); 
+
+    console.log(likesPost1());
+    console.log(likesPost1());
+    console.log(likesPost2());
+    console.log(likesPost2());
+    console.log(likesPost1());
+    console.log(likesPost1());
+    console.log(likesPost3());
+    console.log(likesPost3());
+    console.log(likesPost1()); //--> post1: 5likes, post2: 2likes, post3: 2likes
+
+  //Pure functions: function haii ke be ezaye voroodi haye yeksan be ma khorooji haye yeksan bedahand va tasiri rooye baghie data haye barname nadashte bashand, pure function hastand. mesl function dobarabar kardan adad haye voroodi.
+  //Impure function: agar begheir az khorooji haii ke midahand, yek data ya value chiz digari ra ham avaz konand impure function khahand dasht.
+
+
+
+
