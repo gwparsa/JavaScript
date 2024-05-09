@@ -796,5 +796,65 @@
     Math.random();
   //agar bekhaiim adad haye bishtar az 1 begirim mitavanim an ra zarb konim, masalan agar bekhaiim az 0 ta 10 ra be ma bedahad, natije ra zarb dar 10 mikonim. ex:
     console.log(Math.random() * 10); //--> 8.12324... //--> 3.12324...
+
+
+
+
+//Time & Date:
+  //yek object az etelaat mokhtelef baraye estefade az zamna va tarikh ast.
+  //mah ha dar js bejaye mahe 1 ta 12, az 0 ta 11 khahad bood.
+  //hamchenin rooz haye hafte ham bejaye 1 ta 7, az 0 ta 6 shemorde mishavand.
+    const date = new Date();
+    console.log(date); //--> Thursday May 9 2024 19:56:23 GMT+0330
+
+  //zaman dar js az sal 1970 dar hale shomorde shodan ast.
+  //getTime method: in method zaman separi shode ra be mili second be ma neshan midahad. ex:
+    console.log(date.getTime()); //--> 1682364184321 // meqdar zaman separi shode az sale 1970 ta be alan be soorat mili second.
+
+  //hata mitavanim ba voroodi dadan be function Date yek tarikh va zaman khas ra vared konim. ex:
+    const date2 = new Date(2004, 7, 22); //--> Aug 22 2004
+    const date3 = new Date(2004, 7, 22, 22, 31, 15); //--> Aug 22 2004 22:31:15
+    const date4 = new Date(1682364184321); //--> Aug 23 2011 16:30:15 //tabdil milisecond be tarikh o zamin.
+    const date5 = new Date("4/9/2024"); //--> May 9 2024
+    const date6 = new Date("9 May 2024"); //--> May 9 2024
+
+  //getFullYear: sale konooni ra neshan midahad. ex:
+    console.log(date.getFullYear()); //--> 2024
+  //getMonth: mahe konooni ra menhaye yek neshan midahad chon index mah ha az 0 ta 11 ast. ex:
+    console.log(date.getMonth()); //--> 4
+  //getDate: rooze konooni ra neshan midahad. ex:
+    console.log(date.getDate()); //--> 9
+  //getHours, getMinutes, getSeconds, getMiliseconds: saat, daghighe, saniye va milisaniye konnoni ra neshan midahad. ex:
+    console.log(date.getHours()); //--> 20 (saat 8 shab)
+    console.log(date.getMinutes()); //--> 31
+    console.log(date.getSeconds()); //--> 56
+    console.log(date.getMilliseconds()); //--> 45
+  //getDay: rooz konooni ra neshan midahad ama mesl mah ha daraye index hastand. hamchenin akhar hafte dar js rooz shanbe (sat) ast va baraye hamin index 0 az yekshanbe shoru mishavad. ex:
+    console.log(date.getDay()); //--> 4
+
+  //UTC time: baraye inke saat jahani ra be dast avarim faghad kafi ast beyn get va Hours ya baghie method ha yek UTC ezafe konim. ex:
+    console.log(date.getUTCHours()); //--> 15
+    console.log(date.getUTCMinutes()); //--> 35
+
+  //baraye behtar neshan dadan tarikh va zaman be karbar ha mitavanim inkar ra konim:
+    console.log(date.toLocaleDateString()); //--> 5/9/2024
+    console.log(date.toLocaleTimeString()); //--> 20:31:53 PM
+
+  //setInterval: mitavanim yek code khas ra dar yek time moshakhas be soorat loop ejra konim. voroodi aval yek function ya code va voroodi dovom timeii ke mikhaiim baad an code ejra shavad ra be soorat millisecond vared mikonim. ex:
+    const interval = setInterval(()=>console.log(counter++), 1000);
+  //va vaghti bekhaiim baad yek modat an ra motevaghef konim, bayad dar function voroodi, yek shart benevisim va vaghti be an shart resid, az clearInterval estefade konim. ex:
+    const interval2 = setInterval(() => {
+      let counter = 0
+      console.log(counter++);
+      if (counter >= 5){
+        console.log(finished);
+        clearInterval(interval2); // dar () nayad esm variableii ke function interval ma zakhire shode ra benevisim.
+      }
+    }, 1000);
     
-  
+  //setTimeout: mesl setInterval voroodi migirad ama fargh an dar in ast ke baad az zamani ke be an dadim faghad yekbar code hara ejra mikonad.
+    const timeout = setTimeout(()=>console.log("salam"), 2000); //baad az 2 saniye yekbar salam ra chap mikonad.
+
+  //va baraye clear kardan timeout ham az clearTimeout estfade mikonim. ex:
+    clearTimeout(timeout); //esm variable dar () neveshte mishavad. 
+    
