@@ -857,4 +857,7 @@
 
   //va baraye clear kardan timeout ham az clearTimeout estfade mikonim. ex:
     clearTimeout(timeout); //esm variable dar () neveshte mishavad. 
+
+//Error Handling:
+  //
     
