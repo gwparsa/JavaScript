@@ -858,5 +858,22 @@
   //va baraye clear kardan timeout ham az clearTimeout estfade mikonim. ex:
     clearTimeout(timeout); //esm variable dar () neveshte mishavad. 
 
+
+
+    
 //Error Handling:
+  //gahi oghat vaghti barname ma ke havi function ha ya code haye ziadi ast ra ejra mikonim, momkene be errori dar yek ya chand bakhsh barname bar bokhorim ke baes crash shodan kol barname mishavad va nmigozarad baghie code ha ejra shavand. baraye rafe in moshkel az trry va catch estefade mikonim:
+    const like3 = (likes) => {
+      let likeccounter = likes;
+      likeccounter++;
+      return likeccounter;
+    };
+    console.log(like3("salam")); //--> Error!
+
+    try {
+      console.log(like3("salam")); //bakhsh ejraii barname ke ehtemal borooz error ra dar inja gharar midahim.
+    } catch (error) {
+      console.log("Error! Please try again."); //agar function be error nakhorad bakhsh bala dar try ejra mishavad ama agar be error khord bakhsh dakhel catch ejra mishavad va baghie barname ra ham crash nmikonad.
+    }
+
   //
