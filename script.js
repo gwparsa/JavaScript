@@ -120,7 +120,7 @@
 
 
 
-//Data Types:      
+//Data Structures:      
   // variable ha anvae mokhtalefi darand manand Number, String, undefined, Object etc
     var mynum = 3; //Number, fargh nmikone adad Integer ( adad haye sahih ) ya Float ( adad haye ashari ) bashe.
     let mynum2 = 1.45;
@@ -142,6 +142,27 @@
   // in method array va null ra ham object neshan midahad!
   // in method yek noe Oprator ast.
 
+  //Map: az jens object ast, shabih be object ha ast va mesl an key va value darad. bazi az eshkal haye object ra gerefte ast.
+    const myMap = new Map();
+    myMap.set("name", "Parsa"); //avalin meghdar key va dovomin meghdar value ast.
+    myMap.set([1, 2, 3], 6); //bar khalaf object mitavanim array ra be onvan yek key moarefi konim.
+    myMap.set({age: 20}, true);
+    myMap.set("name", "Parsa").set([1, 2, 3], 6).set({age: 20}, true); //hata mitavanim be soorat zanjir var dar yek khat anha ra taarif konim.
+    const mySecondMap = new Map(["name", "Parsa"],[{age: 26}, true]); //rah digar assign data be map dar haman marhale taarif an ast.
+  //agar bekhaim data ra az map begirim az method get estefade mikonim:
+    const result2 = myMap.get("name"); //--> Parsa
+  // ba method size mitavanim length map ra befahmim:
+    const result3 = myMap.size; //--> 3
+  //agar bekhaiim yek item ra hazf konim bayad az delete estefade konim:
+    myMap.delete("age");
+  //agar bekhaiim kol item haye map ra pak konim az clear estefade mikonim:
+    myMap.clear();
+  //agar bekhaiim bebinim aya yek key khas dar in map vojood darad ya na az has estefade mikonim:
+    myMap.has("name"); //--> true
+
+  // Map iteration
+
+  
 
 
 
@@ -862,7 +883,7 @@
 
     
 //Error Handling:
-  //gahi oghat vaghti barname ma ke havi function ha ya code haye ziadi ast ra ejra mikonim, momkene be errori dar yek ya chand bakhsh barname bar bokhorim ke baes crash shodan kol barname mishavad va nmigozarad baghie code ha ejra shavand. baraye rafe in moshkel az trry va catch estefade mikonim:
+  //try catch: gahi oghat vaghti barname ma ke havi function ha ya code haye ziadi ast ra ejra mikonim, momkene be errori dar yek ya chand bakhsh barname bar bokhorim ke baes crash shodan kol barname mishavad va nmigozarad baghie code ha ejra shavand. baraye rafe in moshkel az trry va catch estefade mikonim:
     const like3 = (likes) => {
       let likeccounter = likes;
       likeccounter++;
@@ -873,7 +894,31 @@
     try {
       console.log(like3("salam")); //bakhsh ejraii barname ke ehtemal borooz error ra dar inja gharar midahim.
     } catch (error) {
-      console.log("Error! Please try again."); //agar function be error nakhorad bakhsh bala dar try ejra mishavad ama agar be error khord bakhsh dakhel catch ejra mishavad va baghie barname ra ham crash nmikonad.
+      console.log("Error! Please try again"); //agar function be error nakhorad bakhsh bala dar try ejra mishavad ama agar be error khord bakhsh dakhel catch ejra mishavad va baghie barname ra ham crash nmikonad.
     }
 
-  //
+  //finally: dar har soorat agar be error bokhorim ya nakhorim code haye dakhel finally ejra khahad shod:
+    try {
+      console.log(like3("salam"));
+    } catch (error) {
+      console.log("Error! Please try again");
+    } finally {
+      console.log("continue!");
+    };
+
+  //throw: bazi oghat ma bayad khodemoon error ijad konim va be jaye error haye na mafhoom js matn haye khodemoon ro benevisim:
+    try {
+      console.log(like3("salam"));
+    } catch (error) {
+      console.log("Error! Please try again");
+      throw "Error! Voroodi eshtebah ast!"; //be jaye namayesh error haye khod js, matn error ekhtesasi ma ra namayesh khahad dad.
+    }
+  //gahi niaz ast error message ra be soorat ek abject bargardand:
+    try {
+      console.log(like3("salam"));
+    } catch (error) {
+      console.log("Error! Please try again");
+      throw {message: "Error! Voroodi eshtebah ast!"}; //mitavanim dar function ha ya ghesmat haye digar code az error message estefade konim.
+    }
+
+  
