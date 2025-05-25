@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --color-id-bg: #cccccc8e;
+}
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.color-container{
+    border-radius: 10px;
+    background: #8e4eb6; /*will be deleted*/
+    width: 150px;
+    height: 250px;
+    display: inline-block;
+}
+.color-id{
+    display: flex;
+    justify-content: center;
+    border-radius: 10px 10px 0 0;
+    width: 150px;
+    background: var(--color-id-bg);
+    padding: 5px 0;
+    font-size: 16px;
+}
