@@ -159,11 +159,15 @@
     myMap.clear();
   //agar bekhaiim bebinim aya yek key khas dar in map vojood darad ya na az has estefade mikonim:
     myMap.has("name"); //--> true
-
-  // Map iteration
+  //Set iteration: be do soorta mitavan amaliat iteration ra rooye set va map ejra kard:
+    const values = mySet.values();
+    for (const value of values) {
+      console.log(value); //tak tak value haye mySet ra type mikonad.
+    }
+  //ravesh dovom baraye inkar:
+    mySet.forEach((value) => console.log(value));
 
   
-
 
 
 //Memory: 
@@ -278,6 +282,41 @@
   //zamani ke bekhahim rooye yek data type gheir az Number mohasebat anjam bedim, in khata rokh midahad.
     console.log("Parsa" / 2); // --> NaN
   //NaN yek zir majmooe az data type Number ast!
+
+
+
+
+//symbol: yek data type ke dar es6 moarefi shod. yek value monhaser be fard tolid mikonad ke faghad yekbar tolid mishavad. masalan yek data dar database yek id darad ke ba baghie id ha fargh mikonad. dar inja az symbol estefade mishavad ke mamolan az an be onvan identifier estefade mishavad. nahve tolid symbol:
+    const sym1 = Symbol("id"); //id dar inja hokm description ra darad ke ma bedanim in symbol baraye che kari ast va yek tozihi benevisim ke hich tasiri rooye kare ma nadarad.
+    const sym2 = Symbol(); //sym1 !== sym2
+    console.log(sym1.description); // --> "id"
+
+  //karbord symbol: be gheir az identifier mitavanad be onvan yek variable makhfi dar object ha estefade konim:
+    const userId = Symbol("id");
+
+    const userData = {
+      name: "Parsa",
+      lastName: "Sorsori",
+      [userId]: "21423", //in value dar loop ha va amaliat mokhtalef neshoon dade nemishe. chon shayad yek data hasas bashad.
+    }
+    console.log(Object.keys(userData)); //--> name, lastName
+
+  //Shared Symbol: agar bekhaiim symbol haii ba value haye yeksan dashte bashim injoori amal mikonim:
+    const sym3 = Symbol.for("age"); //bayad hame symbol ha ba .for neveshte shavand. meghdar description inja mohem ast va agar fargh konad natije false mishavad.
+    const sym4 = Symbol.for("age"); //--> sym3 === sym4 --> true
+  //masalan age yek symbol dar function dashte bashim va bekhaiim kharej az scope function be an dastresi dashte bashim, mitavanim injoori amal konim:
+    const userData2 = {
+      name: "Parsa",
+    };
+
+    const addAge = () => {
+      const age = Symbol.for("age");
+      userData2[age] = 20;
+    };
+    addAge();
+
+    const age = Symbol.for("age"); //inja yek symbol mesl symbol dakhel function misazim ke betavanim an ra log begirim.
+    console.log(data[age]); //--> 20
 
 
 
@@ -921,4 +960,3 @@
       throw {message: "Error! Voroodi eshtebah ast!"}; //mitavanim dar function ha ya ghesmat haye digar code az error message estefade konim.
     }
 
-  
