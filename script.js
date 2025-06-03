@@ -1017,3 +1017,32 @@
     button.addEventListener("click", Clicked); //function be soorat jodagane neveshte mishe va dar zaman niaz dar bakhsh dovom parameter ha gharar dade mishe(bedoon () chon age dashte bashe baad az refresh safhe yebar khodesho khod be khod ejra mikone).
 
   //Types of Events:
+    button.addEventListener("click");
+    button.addEventListener("mouseenter"); //zamani ke mouse vared yek element beshe.
+    button.addEventListener("mouseleave"); //zamani ke mouse az un element kharej beshe.
+    button.addEventListener("mousemove"); //ta vaghti mouse dakhel element hast va tekoon mikhore.
+    button.addEventListener("keydown"); //vaghti yek klid rooye keyboard ra feshar midahim va kilid ra feshar midahim.
+    button.addEventListener("keyup"); //vaghti ke kilid feshar dade shode ra bar midarim.
+    button.addEventListener("change"); //zamani ke taghiri tooye tag haii mesl input va form ha ijad mikonim.
+    button.addEventListener("load"); //zamani ke page ma load beshe ejra mishe
+    button.addEventListener("resize"); //vaghti ke page ya website taghir size midahad.
+
+  //Target: dar hame event ha ma yek object target darim ke item target shode va amaliat rooye an ra namayesh midahad.
+
+  //preventDefault: baazi az element ha yek raftar zati darand ke ba in method mitavanim an ra gheir faal konim. masalan dar input haye type submit, baad az submit kardan safhe refresh mishe. baraye gheir faal kardan in raftar:
+    input.preventDefault();
+
+  //StopPropagation: vaghti 2 ya chand element tu dar tu darim ke ba click rooye yeki az an ha baghie ham ejra mishavand mitunim tooye dakheli tarin function az method StopPropagation(); estefade konim.
+
+  //Deleting the Events: baraye hazf kardan yek event az element:
+    button.removeEventListener("click", Clicked); //bayad parameter haye daghigh dar zaman sakht event ra behesh bedim.
+
+  //Dataset: yekseri data ke mitavanim dar tag haye html benevisim: <h1 data-name="Parsa">Salam</h1>. va ba object .dataset mitunim behesh dastresi dashte bashim.
+    console.log(h1.dataset);
+
+  //andaze haye element: andaze haye element ha ra mitunim dashte bashim. mesl width, height va ...
+    button.offsetHeight; //ertefae button be pixel
+    button.offsetWidth; //tul button be pixel
+    button.offsetTop; //fasele button ta balaye page
+    button.offsetLeft; //fasele button ta chape page
+    button.scrollHeight; //ertefae yek element ke scroll darad dar vaghe cheghadr ast
