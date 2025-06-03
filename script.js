@@ -960,3 +960,60 @@
       throw {message: "Error! Voroodi eshtebah ast!"}; //mitavanim dar function ha ya ghesmat haye digar code az error message estefade konim.
     }
 
+
+
+
+//DOM (Document Object Model): chizi ke be ma dastresi midahad ta ma betavanim file html ra ba js taghir dahim.
+  //Selector :
+  //Single Selector: ba in method mitavanim yek element ra select konim:
+    const myElement = document.querySelector("h1"); //yek tag h1 ra dar file html select mikonad (agar bishtar az yek tag h1 dashtim, avali ra select mikonad) va dar variable myElement mirizad.
+    const myElement1 = document.querySelector(".container"); //inja mitavanim yek element ra ba class an select kard.
+    const myElement2 = document.querySelector("#id"); //miatavanim ba id element ham select kard.
+    const myElement3 = document.getElementById("id"); //mesl bala amal mikonad vali lazem nist avalesh # bezarim.
+  //Multi Selector: mesl single selector ha hastand vali hame tag haye yeksan ra select mikonad:
+    const myElements = document.querySelectorAll("p"); // kol tag haye p dakhel file html ra select mikonad va mesl array be ma neshan midahad.
+    const myElements1 = document.querySelectorAll(".container"); // hame element haye ba class .container ra select mikonad.
+    const myElements2 = document.getElementsByTagName("h1"); //tamam tag haye h1 ra select mikonad.
+    const myElements3 = document.getElementsByClassName("container"); //tamam tag haye ba class container ra select mikonad.
+  //agar bekhaiim dakhel yek tag ke ghablan select shode va dakhel variable rikhte shode, yek tag khas ra select konim:
+    const mySelectedElement = document.querySelector("div");
+    const title = mySelectedElement.querySelector(".title"); //tagi ke class title darad ra dakhel div select mikonad.
+
+  //Parents & Siblings: ba ravesh haye zir parent ya child haye yek tag ra migirim:
+    console.log(myElement.parentElement); //parent tag select shode ra midahad.
+    console.log(myElement.nextElementSibling); //tag baadi in tag ra midahad.
+  
+  //Manipulation: baraye taghirat dar tag ha:
+    console.log(myElement.innerText); //matn dakhel yek tag ra midahad.
+    console.log(myElement.innerHTML); //sakhtar html an tag ra midahad.
+    myElement.innerText = "matn dovom"; //matn dakhel tag avaz mishavad.
+
+  //CSS Style Changing: mitavanim taghirat style ra dar js anjam dahim:
+    myElement.style.color = "#000"; // az method style mitavanim hame property haye css ra taghir dahim.
+    myElement.style.fontSize = "30px"; //agar deghat konim font size dar css be soorat font-size mineveshtim vali chon inja error mikhorim be soorat camelCase minevisim.
+  //*: vaghti injoori style midim in style be soorat inline rooye tag emal mishe pas behtare ke ma style haye khodemun ro dakhel file css benevisim va faghad baraye emal shodan taghirat esm class an tag ro avaz konim:
+    myElement.className = "container2";
+    myElement.classList.add("text"); //class text ra be myELement ezafe mikonad
+    myElement.classList.remove("container"); //class container ra az myELement hazf mikonad.
+    myElement.classList.toggle("text"); //barresi mikonad ke aya in tag class tag ra darad ya kheyr. agar nadasht be an ezafe mikonad va agar dasht an ra barmidarad.
+
+  //Inserting to DOM: baraye ijad va ezafe kardan yek tag be file html:
+    const newElement = document.createElement("span"); //ba method createElement mitunim tag besazim.
+    newElement.innerText = "salam tage jadidam"; //mohtava barash besazim
+    newElement.className = "spantag";
+    document.appendChild(newElement); //va ba method appendChild an ra be file html ezafe konim.
+
+  //Deleting from DOM: baraye hazf kardan yek element:
+    newElement.remove();
+
+  //Events: agar bekhaiim dar soorat click shodan rooye yek tag ya har chizi, kari anjam bedim:
+    const button = document.querySelector("button");
+    button.addEventListener("click", () => { //ba method addEventListener kar mikonad. avalin parameter ke dakhel "" neveshte mishe baraye type event va parameter baadi handler ast ke mitavanad yek function bashad ya yek caller az an function.
+      console.log("salam");
+    });
+    //injoori benevisim behtare:
+    const button1 = document.querySelector("button");
+    const Clicked = () => {console.log("salam")};
+    button.addEventListener("click", Clicked); //function be soorat jodagane neveshte mishe va dar zaman niaz dar bakhsh dovom parameter ha gharar dade mishe(bedoon () chon age dashte bashe baad az refresh safhe yebar khodesho khod be khod ejra mikone).
+
+  //Types of Events:
