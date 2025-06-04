@@ -1046,3 +1046,21 @@
     button.offsetTop; //fasele button ta balaye page
     button.offsetLeft; //fasele button ta chape page
     button.scrollHeight; //ertefae yek element ke scroll darad dar vaghe cheghadr ast
+
+
+
+
+//BOM (Browser Object Model): gheir az dom ke be ma dastresi be mohtavaye document ra faraham mikard, emkanat browser ra faal mikonad.
+  //window: safhe koli browser ra migooim.
+  //screen: safhe koli monitor ra migooim.
+  //location: tanzimati baraye link haye website:
+    location.href //link site ra midahad.
+    location.reload(); //website ra reload mikonad.
+    location.assign("https://gwparsa.ir"); //fard ra be in website mifrestad.
+    location.replace("https://gwparsa.ir"); //mesl assign raftar mikonad ama nmigozarad user be in website bargardad.
+
+  //history: tarikhche safhe haye bazdid karde dar browser.
+    history.back(); //yek safhe be aghab barmigardad.
+
+  //navigator: yek seri etelaat darbare browser user midahad.
+
