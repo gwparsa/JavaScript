@@ -1064,3 +1064,60 @@
 
   //navigator: yek seri etelaat darbare browser user midahad.
 
+
+
+
+//Storage: mahal haye zkhiresazi data:
+  //client-side Storage: mahal zakhiresazi samt user ke dar browser ya system user zakhire mishe. 2 daste hastand: 1.persistent ke baad az bastan browser ya tab ham baz zakhire mimanand. 2.volatile ke baad az bastan tab website pak mishavand.
+
+  //LocalStorage: yeki az ravesh haye zakhire data dar browser client ke type persistent hast. ta 5MB mishe dakhel an data zakhire kard. be soorat key va value bayad zakhire konimva hatman bayad string bashand:
+    localStorage.setItem("name", "Milad"); //ba method setItem item jadid ezafe mikonim.
+  //baraye zakhire adadya array ya... aval an ha ra be string tabdil va baad zakhire mikonim:
+    const myData1 = {name: "Parsa", age: 20};
+    const stringData = JSON.stringify(myData1);
+    localStorage.setItem("data", stringData);
+  //baraye gereftan data ha az local storage injoori kar mikonim:
+    const neededData = localStorage.getItem(stringData);
+    const parsedData = JSON.parse(neededData); //va baraye bargardandan an data az string, az in ravesh estefade mikonim.
+  //baraye update kardan data dar local storage haman ravesh setitem vali haman key ghabli ra minevisim ta rooye item ghabli save shavad:
+    localStorage.setItem("name", "Parsa");
+  //baraye pak shodan kol local storage injoori estefade mikonim:
+    localStorage.clear();
+  //va baraye hazf kardan faghad yeki az item ha:
+    localStorage.removeItem("name");
+  
+  //SessionStorage: daghighan shabih be local storage ast va method haye yeksan darad ama data haye an volatile ast va baad az bastan tab browser pak mishavand.
+    sessionStorage.setItem("name", "Parsa");
+    sessionStorage.removeItem("name");
+
+  //Cookies: ta 80KB mahal zakhire darad. mitavanad ba req haye dastresi be samt server ya back-end ersal shavand. yek mohid persistent ast va mitavanim tarikh engheza dashte bashim:
+    document.cookie = "name=Parsa";
+  //agar dar value hayeman " , / va az in symbol ha dashtim behtare ke be soorat zir bahs amniat ra bishtar konim:
+    document.cookie = `name=${encodeURIComponent("Parsa, Sorsori")}`;
+  //baraye ezafe kardan expire age ya tarikh engheza:
+    document.cookie = "password=12342; max-age=2000"; //baad az 2000 sanie in cookie pak mishavad.
+
+
+
+
+//Module: agar project ma file haye js ziadi darad. dar yeki az file ha function ha va etelaat asli ra minevisim va dar baghie file ha az an ha estefade mikonim ke an file module migooim. behtar ast bejaye yek file bozorg chnadin file koochik dashte bashim.
+  //Module(ravesh Named): bayad baraye inkar dar file html hame file ha ra set konim va injoori benevisim:
+    //<script src="./script.js" type="module"></script>
+    //<script src="./app.js" type="module"></script>
+  //baraye inke yek code dar jahaye digar estefade shavad dar aval an export ra minevisim:
+    export const name = "Parsa";
+    export const age = 20;
+    export const showMessages = () => {console.log("hi!");}; //hata function ham mishe export kard.
+  //va baraye inke in code dar file digar vared va estefade she bayad dar an file import shavad:
+    import {name, age, showMessages} from "./script.js";
+
+  //Module(ravesh Default): az har file faghad yek chiz ro mitoonim export va import konim:
+    const name = "Parsa";
+    export default name;
+  //va import be in shekl ast:
+    import name from "./script.js";
+  //chon az har file yek item export mishe, mitoonim dar import kardan har esmi ke khastim barash bezarim:
+    import name2 from "./script.js";
+  //va baraye inke hame chi ra baham import konad(named va default ba ham) injoori mikonim:
+    import * as all from "./script.js";
+    
