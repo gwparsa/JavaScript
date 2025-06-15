@@ -1120,4 +1120,45 @@
     import name2 from "./script.js";
   //va baraye inke hame chi ra baham import konad(named va default ba ham) injoori mikonim:
     import * as all from "./script.js";
-    
+
+
+
+
+//Single Thread: js yek zaban single thread ast yani khat be khat be tartib ejra mishe.
+  //Sync & Async programming: dar barname nevisi sync barname ha be tartib ejra mishan va dar async hame task ha hamzaman ejra va sari tar tamam mishavad.
+
+
+
+
+//Async JS: chon js yek zabani ast ke be tartib khati barname ra ejra mikonad pas ba komak browser ghabeliat haii be js ezafe mishavad ke betoonim hamzaman darkhast haye web ra ba barname ejra konim.
+  //callback: vaghti yek data ro niaz darim ta az server biad va gharare tooye yek function dige estefade she un function ro be onvan call back be function zaman bar be onvan parameter midim. ama vaghti call back haye ma bishtar az 2 laye bashad tabdil be callback hell mishe va baraye hamin ziad estefade nmishe.
+
+  //Promise: yek ravesh dige estefade az async promise ast.
+    const promise = new Promise((resolve, reject) => {
+      /*ye meghdar code*/
+      resolve(); //agar kare ma ba movafaghiat anjam beshe ba resolve() be an payan mididm va agar nashod ba reject() in kar ro mikonim.
+    });
+    promise.then(console.log("tamam")); //method then baraye zamani ast ke code haye dakhel promise anjam mishe va baad code dakhel () an ra anjam mide.
+
+    const promise2 = new Promise((resolve, reject) => {
+      /*ye meghdar code*/
+      reject(); //agar kare ma ba movafaghiat anjam beshe ba resolve() be an payan mididm va agar nashod ba reject() in kar ro mikonim.
+    });
+    promise.catch(console.log("error")); //method catch baraye zamani ast ke code haye dakhel promise anjam nemishe va baad code dakhel () an ra anjam mide.
+
+  //mesal behtar: agar adad shansi ma kamtar az 0.5 bood resolve va agar bishtar bood reject konim:
+    const random = new Promise((resolve, reject) => {
+      const randomNumber = Math.random();
+      if(randomNumber < .5){
+        console.log("accepted");
+        resolve();
+      }else{
+        console.log("rejected!");
+        reject();
+      }
+    });
+
+    random.then(console.log("accepted End"));
+    random.catch(console.log("rejected End"));
+
+  //
