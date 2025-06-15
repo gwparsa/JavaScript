@@ -1144,7 +1144,7 @@
       /*ye meghdar code*/
       reject(); //agar kare ma ba movafaghiat anjam beshe ba resolve() be an payan mididm va agar nashod ba reject() in kar ro mikonim.
     });
-    promise.catch(console.log("error")); //method catch baraye zamani ast ke code haye dakhel promise anjam nemishe va baad code dakhel () an ra anjam mide.
+    promise2.catch(console.log("error")); //method catch baraye zamani ast ke code haye dakhel promise anjam nemishe va baad code dakhel () an ra anjam mide.
 
   //mesal behtar: agar adad shansi ma kamtar az 0.5 bood resolve va agar bishtar bood reject konim:
     const random = new Promise((resolve, reject) => {
@@ -1161,4 +1161,45 @@
     random.then(console.log("accepted End"));
     random.catch(console.log("rejected End"));
 
-  //
+  //then & catch: 
+    const random2 = new Promise((resolve, reject) => {
+    const randomNumber = Math.random();
+    if(randomNumber < .5){
+      console.log("accepted");
+      resolve(randomNumber); //agar dar () meqdari gharar bedim an meqdar be onvan data khorooji be biroon az promise hedayat mishe. va dar then mitoonim roosh amaliat anjam bedim.
+    }else{
+      console.log("rejected!");
+      reject("Error 502!"); //va agar inja dakhele () chizi gharar bedim be unvan description reject be biroon va be catch ma hedayat mishe.
+    }
+    });
+    random2.then((result) => {console.log(result)}); //data khorooji inja estefade mishe ke inja baraye ma result ast.
+    random2.catch((error) => {console.log(error)});
+  
+    random2.then((result) => result*10).then((result) => console.log(result)); //nahve estefade az data haii ke az promise birun umade.
+
+  //Async & Await: kar ba async js ra rahat tar mikonad. hamin kar promise ro anjam mide va dar bahs then va catch behtar ast. dar function ha karbord darad.
+    async function started() { //ghabl az esm function kalame async ro minevisim.
+      const number = await isNumber(number); //vaghti mibinim ke yek darkhast tool mikeshad masalan function isNumber gharar ast yek response az server begirad, az await estefade mikonim va migim ta vaghti javab isnumber naumade naro khat baadi.
+    };
+
+    const started2 = async () => { //in ham ravesh estefade az async tooye arrow function ha.
+      const number = await isNumber(number);
+    };
+
+  //Async & Await  Error Handling: besadegi dar function async ma az try catch estefade mikonim:
+    const started3 = async () => { 
+      try {
+        const number = await isNumber(number);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+
+
+
+// HTTP Requests: 
+  //API (Application Programming Interface): ertebat bein do barname ya software ba api anjam mishe.
+  //AJAX (Asynchronous Javascript and XML): ghabliat update kardan mohtavaye yek safhe az website bedoon refresh shodan an.
+  //JSON (Javascript Object Notation): JSON dar api baraye bargharari ertebat bein barname ha estefade mishe va mesl yek zaban bein in barname ha kar mikone.
+    
