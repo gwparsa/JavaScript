@@ -1199,7 +1199,44 @@
 
 
 // HTTP Requests: 
-  //API (Application Programming Interface): ertebat bein do barname ya software ba api anjam mishe.
+  //API (Application Programming Interface): ertebat bein do barname ya software ba api anjam mishe. shabih be yek URL ast.
+  //Rest API: yek estandard ya memari tarahi api ast.
   //AJAX (Asynchronous Javascript and XML): ghabliat update kardan mohtavaye yek safhe az website bedoon refresh shodan an.
   //JSON (Javascript Object Notation): JSON dar api baraye bargharari ertebat bein barname ha estefade mishe va mesl yek zaban bein in barname ha kar mikone.
+  //HTTP Request: yek darkhast az taraf client be server baraye dastresi be resourse ya data ha.
+    //GET: vaghti dar ersal req az GET estefade mikonim yani mikhaiim yekseri etelaat ro daryaft konim.
+    //POST: baraye ersal data ha be server estefade mishe.
+    //PUT & PATCH: baraye update data ha dar database estefade mishan.
+    //DELETE: baraye hazf yek item az server estefade mishe.
+  //HTTP Response: baad az request client natije in darkhast be soorat json az server be samt client barmigarde ke response nam dare.
+  //HTTP Status Codes: 2xx -> ok req, 4xx -> moshkel az samt client, 5xx -> moshkel az server.
+  //XMLHttpRequest: ravesh ghadimi ersal darkhast haye http:
+    const xhr = new XMLHttpRequest() //sakht darkhast
+    xhr.open("GET", "https://jsonplaceholder.typicode.com/posts"); //entekhab method ersal
+        xhr.onload = () => { //nahve estefade az data haye gerefte shode(event sakhte shode ke vaghti data load shod az an estefade konad).
+      const {response} = xhr;
+      console.log(JSON.parse(response));
+    }
+    xhr.send(); //ersal darkhast
+  
+  //fetch:
+    fetch("https://jsonplaceholder.typicode.com/posts"); //hame amaliat xmlhttprequest ra dar hamin khat anjam midahad. agar chizi joz url nanevisim, be soorat default method GET khahad bood.
+    fetch("https://jsonplaceholder.typicode.com/posts").then((res) => res.json()).then((data) => console.log(data)).catch((err) => console.log(err)); //nahve estefade az data haye gerefte shode. method .json() daghighan kar JSON.parse() ra anjam midahad.
+
+    const url = "https://jsonplaceholder.typicode.com/posts"; //ravesh behtar baraye clean code
+    const data1 = {
+      title: "JS Course",
+      desc: "This is a js course",
+      userId: "2314",
+    }
+
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify(data1),
+      headers: { //headers dar inja yek seri data haye mofid darbare darkhast ma ro be server mifahmoone.
+        "Content-Type": "application/json",
+      },
+    })
+    .then((res) => res.json())
+    .then((data) => console.log(data)); //vaghti method ma POST ast pas bayad baraye ersal data baghie maghadir ham kamel konim.
     
